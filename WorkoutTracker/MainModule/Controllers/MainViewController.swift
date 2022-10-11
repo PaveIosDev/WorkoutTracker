@@ -64,11 +64,11 @@ class MainViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .red
-//        tableView.separatorStyle = .none // разделение ячеек выключено
-//        tableView.bounces = false        // оттягивание таблицы выключено
-//        tableView.showsVerticalScrollIndicator = false // убирает вертикальную палку прокрутки
-//        tableView.delaysContentTouches = false
+        tableView.backgroundColor = .none
+        tableView.separatorStyle = .none // разделение ячеек выключено
+        tableView.bounces = false        // оттягивание таблицы выключено
+        tableView.showsVerticalScrollIndicator = false // убирает вертикальную палку прокрутки
+        tableView.delaysContentTouches = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -103,7 +103,7 @@ class MainViewController: UIViewController {
         view.addSubview(workoutTodayLabel)
         view.addSubview(tableView)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idTableViewCell)
+        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idTableViewCell)
     }
     
     private func setDelegates() {
@@ -126,8 +126,9 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath)
-        cell.backgroundColor = .white
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 }

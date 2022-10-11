@@ -19,6 +19,9 @@
 		C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442E61128F0913600A788AD /* UIView + Extensions.swift */; };
 		C442E61428F098D900A788AD /* UIKit + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442E61328F098D900A788AD /* UIKit + Extensions.swift */; };
 		C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442E61628F09A5400A788AD /* UIColor + Extensions.swift */; };
+		C4593FB228F5C2E500B46057 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB128F5C2E500B46057 /* WorkoutTableViewCell.swift */; };
+		C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */; };
+		C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */; };
 		C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,9 @@
 		C442E61128F0913600A788AD /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		C442E61328F098D900A788AD /* UIKit + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + Extensions.swift"; sourceTree = "<group>"; };
 		C442E61628F09A5400A788AD /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		C4593FB128F5C2E500B46057 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +78,7 @@
 			children = (
 				C40DCF1E28ECB026009E4F3A /* Application */,
 				C40DCF2028ECB09E009E4F3A /* MainModule */,
+				C4593FB628F5DA8B00B46057 /* StatisticModule */,
 				C40DCF1F28ECB040009E4F3A /* Resources */,
 				C442E60F28F090B300A788AD /* Extensions */,
 			);
@@ -148,14 +155,24 @@
 				C442E61128F0913600A788AD /* UIView + Extensions.swift */,
 				C442E61328F098D900A788AD /* UIKit + Extensions.swift */,
 				C442E61628F09A5400A788AD /* UIColor + Extensions.swift */,
+				C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C4593FB628F5DA8B00B46057 /* StatisticModule */ = {
+			isa = PBXGroup;
+			children = (
+				C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */,
+			);
+			path = StatisticModule;
 			sourceTree = "<group>";
 		};
 		C49DD96B28F32AE000A0D1C0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */,
+				C4593FB128F5C2E500B46057 /* WorkoutTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -232,9 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */,
 				C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */,
 				C40DCF0F28ECA85F009E4F3A /* MainViewController.swift in Sources */,
+				C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */,
 				C40DCF0B28ECA85F009E4F3A /* AppDelegate.swift in Sources */,
+				C4593FB228F5C2E500B46057 /* WorkoutTableViewCell.swift in Sources */,
 				C40DCF2428EDD7A9009E4F3A /* CalendarView.swift in Sources */,
 				C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
