@@ -45,6 +45,7 @@ class StatisticsViewController: UIViewController {
 
         setupViews()
         setConstraints()
+        setDelegates()
     }
     
     private func setupViews() {
@@ -54,7 +55,7 @@ class StatisticsViewController: UIViewController {
         view.addSubview(exercisesLabel)
         view.addSubview(tableView)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idStatisticsTableViewCell)
+        tableView.register(StatistictsTableViewCell.self, forCellReuseIdentifier: idStatisticsTableViewCell)
     }
     
     private func setDelegates() {
@@ -68,11 +69,13 @@ class StatisticsViewController: UIViewController {
 
 extension StatisticsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idStatisticsTableViewCell, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idStatisticsTableViewCell, for: indexPath) as? StatistictsTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 }
@@ -80,7 +83,7 @@ extension StatisticsViewController: UITableViewDataSource {
 extension StatisticsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        55
     }
 }
 
@@ -101,6 +104,8 @@ extension StatisticsViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            
+
         ])
     }
 }
