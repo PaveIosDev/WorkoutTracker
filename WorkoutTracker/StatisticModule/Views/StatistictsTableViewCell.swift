@@ -18,8 +18,35 @@ class StatistictsTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Biceps"
+        label.textColor = .specialGray
+        label.font = .robotoMedium24()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    private let separatorView: UIView = {
+    private let beforeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Before: 18"
+        label.font = .robotoMedium14()
+        label.textColor = .specialLightBrown
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let nowLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Now: 20"
+        label.font = .robotoMedium14()
+        label.textColor = .specialLightBrown
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    private let lineView: UIView = {
         let view = UIView()
         view.backgroundColor = .specialLightBrown
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +70,10 @@ class StatistictsTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         addSubview(differenceLabel)
-        addSubview(separatorView)
-        
+        addSubview(lineView)
+        addSubview(nameLabel)
+        addSubview(beforeLabel)
+        addSubview(nowLabel)
     }
 }
 
@@ -59,10 +88,22 @@ extension StatistictsTableViewCell {
             differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             differenceLabel.widthAnchor.constraint(equalToConstant: 50),
         
-            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            separatorView.heightAnchor.constraint(equalToConstant: 1)
+            lineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            lineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            lineView.heightAnchor.constraint(equalToConstant: 1),
+            
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 3),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameLabel.heightAnchor.constraint(equalToConstant: 28),
+            
+            beforeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 1),
+            beforeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            beforeLabel.heightAnchor.constraint(equalToConstant: 21),
+            
+            nowLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 1),
+            nowLabel.leadingAnchor.constraint(equalTo: beforeLabel.trailingAnchor, constant: 10),
+            nowLabel.heightAnchor.constraint(equalToConstant: 21)
         ])
     }
 }

@@ -98,7 +98,7 @@ extension StatisticsViewController {
             statisticsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         
             exercisesLabel.topAnchor.constraint(equalTo: statisticsLabel.bottomAnchor, constant: 70),
-            exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
         
             tableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
