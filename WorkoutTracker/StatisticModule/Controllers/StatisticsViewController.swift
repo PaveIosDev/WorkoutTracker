@@ -28,6 +28,20 @@ class StatisticsViewController: UIViewController {
         return label
     }()
     
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Week", "Month"])
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = .specialGreen
+        segmentedControl.selectedSegmentTintColor = .specialYellow
+        let font = UIFont(name: "Roboto-Medium", size: 16)
+        segmentedControl.setTitleTextAttributes([.font : font as Any,
+                                                 .foregroundColor : UIColor.white], for: .normal)
+        segmentedControl.setTitleTextAttributes([.font : font as Any,
+                                                 .foregroundColor : UIColor.specialGray], for: .selected)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentedControl
+    }()
+    
     private let tableView: UITableView = {
        let tableView = UITableView()
         tableView.backgroundColor = .none
@@ -53,6 +67,7 @@ class StatisticsViewController: UIViewController {
         
         view.addSubview(statisticsLabel)
         view.addSubview(exercisesLabel)
+        view.addSubview(segmentedControl)
         view.addSubview(tableView)
         
         tableView.register(StatistictsTableViewCell.self, forCellReuseIdentifier: idStatisticsTableViewCell)
@@ -96,10 +111,14 @@ extension StatisticsViewController {
         NSLayoutConstraint.activate([
             statisticsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             statisticsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        
+
+            segmentedControl.topAnchor.constraint(equalTo: statisticsLabel.bottomAnchor, constant: 20),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
             exercisesLabel.topAnchor.constraint(equalTo: statisticsLabel.bottomAnchor, constant: 70),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-        
+            
             tableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
