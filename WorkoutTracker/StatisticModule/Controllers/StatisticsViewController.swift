@@ -38,6 +38,7 @@ class StatisticsViewController: UIViewController {
                                                  .foregroundColor : UIColor.white], for: .normal)
         segmentedControl.setTitleTextAttributes([.font : font as Any,
                                                  .foregroundColor : UIColor.specialGray], for: .selected)
+        segmentedControl.addTarget(self, action: #selector(segmentedChange), for: .valueChanged)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         return segmentedControl
     }()
@@ -78,6 +79,13 @@ class StatisticsViewController: UIViewController {
         tableView.delegate = self
     }
     
+    @objc func segmentedChange() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            print("Week")
+        } else {
+            print("Month")
+        }
+    }
     
 }
 

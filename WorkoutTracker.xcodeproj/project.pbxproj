@@ -14,6 +14,7 @@
 		C40DCF1728ECA860009E4F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DCF1528ECA860009E4F3A /* LaunchScreen.storyboard */; };
 		C40DCF2428EDD7A9009E4F3A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */; };
 		C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */; };
+		C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422B6A328F89437008C1E9F /* MainTabBarController.swift */; };
 		C442E60D28F08EB100A788AD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */; };
 		C442E60E28F08EB100A788AD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */; };
 		C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442E61128F0913600A788AD /* UIView + Extensions.swift */; };
@@ -36,6 +37,7 @@
 		C40DCF1828ECA860009E4F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		C422B6A328F89437008C1E9F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		C442E61128F0913600A788AD /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C40DCF1E28ECB026009E4F3A /* Application */,
+				C422B6A228F8940E008C1E9F /* NavigationModule */,
 				C40DCF2028ECB09E009E4F3A /* MainModule */,
 				C4593FB628F5DA8B00B46057 /* StatisticModule */,
 				C40DCF1F28ECB040009E4F3A /* Resources */,
@@ -132,6 +135,14 @@
 				C40DCF0E28ECA85F009E4F3A /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C422B6A228F8940E008C1E9F /* NavigationModule */ = {
+			isa = PBXGroup;
+			children = (
+				C422B6A328F89437008C1E9F /* MainTabBarController.swift */,
+			);
+			path = NavigationModule;
 			sourceTree = "<group>";
 		};
 		C442E60A28F08E4200A788AD /* Fonts */ = {
@@ -278,6 +289,7 @@
 				C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
 				C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */,
+				C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */,
 				C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */,
 				C442E61428F098D900A788AD /* UIKit + Extensions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
