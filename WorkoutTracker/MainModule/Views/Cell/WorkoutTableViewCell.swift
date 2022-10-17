@@ -61,7 +61,7 @@ class WorkoutTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var startButton: UIButton = {
+    private lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 10
         button.addShadowOnView()
