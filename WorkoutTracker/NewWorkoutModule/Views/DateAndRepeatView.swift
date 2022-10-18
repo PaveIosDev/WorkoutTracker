@@ -38,7 +38,6 @@ class DateAndRepeatView : UIView {
     private let repeatSwitch : UISwitch = {
         let repeatSwitch = UISwitch()
         repeatSwitch.onTintColor = .specialGreen
-        
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()

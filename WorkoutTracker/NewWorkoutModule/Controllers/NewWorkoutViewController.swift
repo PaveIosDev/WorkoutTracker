@@ -162,7 +162,7 @@ extension NewWorkoutViewController {
             repsOfTimerView.topAnchor.constraint(equalTo: repsOrTimerLabel.bottomAnchor, constant: 1),
             repsOfTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             repsOfTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            repsOfTimerView.heightAnchor.constraint(equalToConstant: 275),
+            repsOfTimerView.heightAnchor.constraint(equalToConstant: 360),
             repsOfTimerView.widthAnchor.constraint(equalToConstant: 345),
             
             saveButton.topAnchor.constraint(equalTo: repsOrTimerLabel.bottomAnchor, constant: 370),
