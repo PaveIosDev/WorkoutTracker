@@ -7,41 +7,45 @@
 
 import UIKit
 
-class DateAndRepeatView : UIView {
+class DateAndRepeatView: UIView {
     
-    private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Date"
-        label.textColor = .specialGray
-        label.font = .robotoMedium18()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let dateAndRepeatLabel = UILabel(text: "Date and repeat")
+    
+    private let backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .specialBrown
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    private let repeatLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Repeat every 7 days"
-        label.textColor = .specialGray
-        label.font = .robotoMedium18()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let datePicker : UIDatePicker = {
-        let datePicker = UIDatePicker()
+    private let dateLabel = UILabel(text: "Date",
+                                    font: .robotoMedium18(),
+                                    textColor: .specialGray)
+
+    private let datePicker: UIDatePicker = {
+       let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.tintColor = .specialGreen
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
     
-    private let repeatSwitch : UISwitch = {
+    private let repeatLabel = UILabel(text: "Repeat every 7 days",
+                                      font: .robotoMedium18(),
+                                      textColor: .specialGray)
+
+    private let repeatSwitch: UISwitch = {
         let repeatSwitch = UISwitch()
+        repeatSwitch.isOn = true
         repeatSwitch.onTintColor = .specialGreen
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
-        return repeatSwitch
+       return repeatSwitch
     }()
-    
+
+    private var dateStackView = UIStackView()
+    private var repeatStackView = UIStackView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -54,35 +58,43 @@ class DateAndRepeatView : UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .specialBrown
-        layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(dateLabel)
-        addSubview(repeatLabel)
-        addSubview(datePicker)
-        datePicker.subviews[0].subviews[0].subviews[0].alpha = 0
+        addSubview(dateAndRepeatLabel)
+        addSubview(backView)
         
-        addSubview(repeatSwitch)
+        dateStackView = UIStackView(arrangedSubviews: [dateLabel,
+                                                       datePicker],
+                                    axis: .horizontal,
+                                    spacing: 10)
+        backView.addSubview(dateStackView)
+
+        repeatStackView = UIStackView(arrangedSubviews: [repeatLabel,
+                                                         repeatSwitch],
+                                      axis: .horizontal,
+                                      spacing: 10)
+        backView.addSubview(repeatStackView)
     }
- 
+
     private func setConstraints() {
+        
         NSLayoutConstraint.activate([
-        
-            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 17),
-            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            dateLabel.widthAnchor.constraint(equalToConstant: 88),
+            dateAndRepeatLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            dateAndRepeatLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
+            dateAndRepeatLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             
-            repeatLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 13),
-            repeatLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            repeatLabel.widthAnchor.constraint(equalToConstant: 183),
-            
-            datePicker.centerYAnchor.constraint(equalTo: dateLabel.centerYAnchor),
-            datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11),
-            
-            repeatSwitch.centerYAnchor.constraint(equalTo: repeatLabel.centerYAnchor),
-            repeatSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14)
-        
+            backView.topAnchor.constraint(equalTo: dateAndRepeatLabel.bottomAnchor, constant: 3),
+            backView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            backView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            backView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+  
+            dateStackView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
+            dateStackView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 15),
+            dateStackView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -15),
+
+            repeatStackView.topAnchor.constraint(equalTo: dateStackView.bottomAnchor, constant: 10),
+            repeatStackView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 15),
+            repeatStackView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -15)
         ])
     }
 }
