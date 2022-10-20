@@ -14,6 +14,9 @@
 		C40DCF1728ECA860009E4F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DCF1528ECA860009E4F3A /* LaunchScreen.storyboard */; };
 		C40DCF2428EDD7A9009E4F3A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */; };
 		C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */; };
+		C419DFC32901B6E7000E867B /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC22901B6E7000E867B /* MainTableView.swift */; };
+		C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC52901BB13000E867B /* StatisticTableView.swift */; };
+		C419DFC82901C016000E867B /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC72901C016000E867B /* CalendarCollectionView.swift */; };
 		C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422B6A328F89437008C1E9F /* MainTabBarController.swift */; };
 		C442E60D28F08EB100A788AD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */; };
 		C442E60E28F08EB100A788AD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */; };
@@ -47,6 +50,9 @@
 		C40DCF1828ECA860009E4F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		C419DFC22901B6E7000E867B /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		C419DFC52901BB13000E867B /* StatisticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableView.swift; sourceTree = "<group>"; };
+		C419DFC72901C016000E867B /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		C422B6A328F89437008C1E9F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		C40DCF2128ECB108009E4F3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C419DFC12901B6C4000E867B /* Subviews */,
 				C49DD96B28F32AE000A0D1C0 /* Cell */,
 				C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */,
 				C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */,
@@ -156,6 +163,23 @@
 				C40DCF0E28ECA85F009E4F3A /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C419DFC12901B6C4000E867B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C419DFC22901B6E7000E867B /* MainTableView.swift */,
+				C419DFC72901C016000E867B /* CalendarCollectionView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		C419DFC42901BAF0000E867B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C419DFC52901BB13000E867B /* StatisticTableView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		C422B6A228F8940E008C1E9F /* NavigationModule */ = {
@@ -208,6 +232,7 @@
 		C4593FBB28F7005100B46057 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C419DFC42901BAF0000E867B /* Subviews */,
 				C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */,
 			);
 			path = Views;
@@ -351,8 +376,10 @@
 			files = (
 				C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */,
 				C493A86928FF1D370080C8F6 /* BrownTextField.swift in Sources */,
+				C419DFC32901B6E7000E867B /* MainTableView.swift in Sources */,
 				C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */,
 				C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */,
+				C419DFC82901C016000E867B /* CalendarCollectionView.swift in Sources */,
 				C40DCF0F28ECA85F009E4F3A /* MainViewController.swift in Sources */,
 				C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */,
 				C40DCF0B28ECA85F009E4F3A /* AppDelegate.swift in Sources */,
@@ -364,6 +391,7 @@
 				C493A87128FF20610080C8F6 /* NameView.swift in Sources */,
 				C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */,
 				C493A86B28FF1DA00080C8F6 /* CloseButton.swift in Sources */,
+				C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
 				C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */,
 				C4C2CEB328FC755100FCD071 /* RepsOfTimerView.swift in Sources */,

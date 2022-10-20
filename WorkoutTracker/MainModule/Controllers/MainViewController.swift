@@ -62,21 +62,9 @@ class MainViewController: UIViewController {
         return label
     }()
     
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .none
-        tableView.separatorStyle = .none // разделение ячеек выключено
-        tableView.bounces = false        // оттягивание таблицы выключено
-        tableView.showsVerticalScrollIndicator = false // убирает вертикальную палку прокрутки
-        tableView.delaysContentTouches = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    private let idTableViewCell = "idTableViewCell"
-    
     private let calendarView = CalendarView()
     private let weatherView = WeatherView()
+    private let tableView = MainTableView()
     
 //    override func viewWillLayoutSubviews() {
 //        
@@ -88,7 +76,6 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
-        setDelegates()
     }
 
     
@@ -103,46 +90,12 @@ class MainViewController: UIViewController {
         view.addSubview(workoutTodayLabel)
         view.addSubview(tableView)
         
-        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idTableViewCell)
     }
-    
-    private func setDelegates() {
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
     
     @objc func addWorkoutButtonTapped() {
         let newWorkoutViewController = NewWorkoutViewController()
         newWorkoutViewController.modalPresentationStyle = .fullScreen
         present(newWorkoutViewController, animated: true)
-    }
-
-}
-
-// MARK: - UITableViewDataSource
-
-extension MainViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
-            return UITableViewCell()
-        }
-        return cell
-    }
-}
-
-
-
-
-// MARK: - UITableViewDelegate
-
-extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
     }
 }
 
