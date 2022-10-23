@@ -22,6 +22,11 @@ class NewWorkoutViewController: UIViewController {
 
     private var stackView = UIStackView()
     
+    private var workoutModel = WorkoutModel()
+    
+    private let testImage = UIImage(named: "testWorkout")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +57,20 @@ class NewWorkoutViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
-        print("save")
+        setModel()
+    }
+    
+    private func setModel() {
+        workoutModel.workoutName = nameView.getNameTextFieldText()
+        
+        workoutModel.workoutDate = dateAndRepeatView.getDataAndRepeat().date
+        workoutModel.workoutRepeat = dateAndRepeatView.getDataAndRepeat().repeat
+        
+        workoutModel.workoutSets = repsOrTimerView.sets
+        workoutModel.workoutReps = repsOrTimerView.reps
+        workoutModel.workoutTimer = repsOrTimerView.timer
+        
+        print(workoutModel)
     }
 }
 

@@ -29,6 +29,8 @@
 		C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */; };
 		C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */; };
 		C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */; };
+		C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488211E29058DD3002DB0A8 /* Int + Extensions.swift */; };
+		C48821222905A8B7002DB0A8 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48821212905A8B7002DB0A8 /* WorkoutModel.swift */; };
 		C493A86628FF1CAD0080C8F6 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A86528FF1CAD0080C8F6 /* UILabel + Extensions.swift */; };
 		C493A86928FF1D370080C8F6 /* BrownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A86828FF1D370080C8F6 /* BrownTextField.swift */; };
 		C493A86B28FF1DA00080C8F6 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A86A28FF1DA00080C8F6 /* CloseButton.swift */; };
@@ -39,7 +41,8 @@
 		C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */; };
 		C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEAE28FC522700FCD071 /* NewWorkoutViewController.swift */; };
 		C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */; };
-		C4C2CEB328FC755100FCD071 /* RepsOfTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB228FC755100FCD071 /* RepsOfTimerView.swift */; };
+		C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */; };
+		C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D19D862905BB8D00F124BC /* SliderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,8 @@
 		C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictsTableViewCell.swift; sourceTree = "<group>"; };
+		C488211E29058DD3002DB0A8 /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
+		C48821212905A8B7002DB0A8 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		C493A86528FF1CAD0080C8F6 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		C493A86828FF1D370080C8F6 /* BrownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrownTextField.swift; sourceTree = "<group>"; };
 		C493A86A28FF1DA00080C8F6 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -75,7 +80,8 @@
 		C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4C2CEAE28FC522700FCD071 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
-		C4C2CEB228FC755100FCD071 /* RepsOfTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOfTimerView.swift; sourceTree = "<group>"; };
+		C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
+		C4D19D862905BB8D00F124BC /* SliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,7 @@
 		C40DCF2028ECB09E009E4F3A /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				C48821202905A55F002DB0A8 /* Models */,
 				C40DCF2128ECB108009E4F3A /* Views */,
 				C40DCF2228ECB11F009E4F3A /* Controllers */,
 			);
@@ -208,6 +215,7 @@
 			children = (
 				C493A86728FF1CD80080C8F6 /* Unique */,
 				C442E61028F090F900A788AD /* UIKit */,
+				C488211E29058DD3002DB0A8 /* Int + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +258,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C48821202905A55F002DB0A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C48821212905A8B7002DB0A8 /* WorkoutModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C493A86728FF1CD80080C8F6 /* Unique */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +297,7 @@
 		C4C2CEAB28FC511200FCD071 /* NewWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
+				C4D19D852905BB6000F124BC /* Model */,
 				C4C2CEAC28FC519B00FCD071 /* Views */,
 				C4C2CEAD28FC51B100FCD071 /* Controllers */,
 			);
@@ -291,7 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */,
-				C4C2CEB228FC755100FCD071 /* RepsOfTimerView.swift */,
+				C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */,
 				C493A87028FF20610080C8F6 /* NameView.swift */,
 				C493A87228FF20950080C8F6 /* Subviews */,
 			);
@@ -304,6 +321,14 @@
 				C4C2CEAE28FC522700FCD071 /* NewWorkoutViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4D19D852905BB6000F124BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4D19D862905BB8D00F124BC /* SliderType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +412,7 @@
 			files = (
 				C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */,
 				C493A86928FF1D370080C8F6 /* BrownTextField.swift in Sources */,
+				C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */,
 				C419DFC32901B6E7000E867B /* MainTableView.swift in Sources */,
 				C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */,
 				C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */,
@@ -401,17 +427,19 @@
 				C493A86F28FF1E140080C8F6 /* GreenSlider.swift in Sources */,
 				C493A87128FF20610080C8F6 /* NameView.swift in Sources */,
 				C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */,
+				C48821222905A8B7002DB0A8 /* WorkoutModel.swift in Sources */,
 				C493A86B28FF1DA00080C8F6 /* CloseButton.swift in Sources */,
 				C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
 				C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */,
-				C4C2CEB328FC755100FCD071 /* RepsOfTimerView.swift in Sources */,
+				C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */,
 				C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */,
 				C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */,
 				C493A86628FF1CAD0080C8F6 /* UILabel + Extensions.swift in Sources */,
 				C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */,
 				C442E61428F098D900A788AD /* UIFont + Extensions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
+				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

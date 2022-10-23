@@ -29,6 +29,14 @@ class NameView: UIView {
         addSubview(nameTextField)
     }
     
+    public func getNameTextFieldText() -> String {
+        guard let text = nameTextField.text else { return "" }
+        return text
+    }
+}
+
+extension NameView {
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
