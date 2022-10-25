@@ -76,10 +76,12 @@ extension RepsOrTimerView: SliderViewProtocol {
             reps = value
             repsView.isActive = true
             timerView.isActive = false
+            timer = 0
         case .timer:
             timer = value
             timerView.isActive = true
             repsView.isActive = false
+            reps = 0
         }
     }
     

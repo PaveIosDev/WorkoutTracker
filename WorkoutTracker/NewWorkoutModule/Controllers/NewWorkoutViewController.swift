@@ -58,19 +58,22 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func saveButtonTapped() {
         setModel()
+        RealmManager.shared.saveWorkoutModel(workoutModel)
     }
     
     private func setModel() {
         workoutModel.workoutName = nameView.getNameTextFieldText()
         
         workoutModel.workoutDate = dateAndRepeatView.getDataAndRepeat().date
+        workoutModel.workoutNumberOfDay = dateAndRepeatView.getDataAndRepeat().date.getWeekdayNumber()
         workoutModel.workoutRepeat = dateAndRepeatView.getDataAndRepeat().repeat
         
         workoutModel.workoutSets = repsOrTimerView.sets
         workoutModel.workoutReps = repsOrTimerView.reps
         workoutModel.workoutTimer = repsOrTimerView.timer
         
-        print(workoutModel)
+        guard let imageData = testImage?.pngData() else { return }
+        workoutModel.workoutImage = imageData
     }
 }
 

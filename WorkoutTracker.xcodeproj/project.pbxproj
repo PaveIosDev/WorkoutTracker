@@ -43,6 +43,8 @@
 		C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */; };
 		C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */; };
 		C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D19D862905BB8D00F124BC /* SliderType.swift */; };
+		C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EBD2908445E00BF16DD /* Date.swift */; };
+		C4ED1EC129084AE900BF16DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EC029084AE900BF16DD /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		C4D19D862905BB8D00F124BC /* SliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderType.swift; sourceTree = "<group>"; };
+		C4ED1EBD2908445E00BF16DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C4ED1EC029084AE900BF16DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +125,9 @@
 				C40DCF2028ECB09E009E4F3A /* MainModule */,
 				C4C2CEAB28FC511200FCD071 /* NewWorkoutModule */,
 				C4593FB628F5DA8B00B46057 /* StatisticModule */,
-				C40DCF1F28ECB040009E4F3A /* Resources */,
 				C442E60F28F090B300A788AD /* Extensions */,
+				C4ED1EBF290849C000BF16DD /* Service */,
+				C40DCF1F28ECB040009E4F3A /* Resources */,
 			);
 			path = WorkoutTracker;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				C493A86728FF1CD80080C8F6 /* Unique */,
 				C442E61028F090F900A788AD /* UIKit */,
 				C488211E29058DD3002DB0A8 /* Int + Extensions.swift */,
+				C4ED1EBD2908445E00BF16DD /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +337,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C4ED1EBF290849C000BF16DD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C4ED1EC029084AE900BF16DD /* RealmManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,8 +449,10 @@
 				C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */,
 				C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */,
 				C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */,
+				C4ED1EC129084AE900BF16DD /* RealmManager.swift in Sources */,
 				C493A86628FF1CAD0080C8F6 /* UILabel + Extensions.swift in Sources */,
 				C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */,
+				C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */,
 				C442E61428F098D900A788AD /* UIFont + Extensions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
 				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
