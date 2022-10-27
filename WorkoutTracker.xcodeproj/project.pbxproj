@@ -38,6 +38,7 @@
 		C493A86F28FF1E140080C8F6 /* GreenSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A86E28FF1E140080C8F6 /* GreenSlider.swift */; };
 		C493A87128FF20610080C8F6 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A87028FF20610080C8F6 /* NameView.swift */; };
 		C493A87428FF20BD0080C8F6 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A87328FF20BD0080C8F6 /* SliderView.swift */; };
+		C49B5656290AF194001A5172 /* UIViewController + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5655290AF194001A5172 /* UIViewController + Extentions.swift */; };
 		C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */; };
 		C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEAE28FC522700FCD071 /* NewWorkoutViewController.swift */; };
 		C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */; };
@@ -79,6 +80,7 @@
 		C493A86E28FF1E140080C8F6 /* GreenSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenSlider.swift; sourceTree = "<group>"; };
 		C493A87028FF20610080C8F6 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		C493A87328FF20BD0080C8F6 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		C49B5655290AF194001A5172 /* UIViewController + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extentions.swift"; sourceTree = "<group>"; };
 		C49DD96C28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4C2CEAE28FC522700FCD071 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				C442E61628F09A5400A788AD /* UIColor + Extensions.swift */,
 				C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */,
 				C493A86528FF1CAD0080C8F6 /* UILabel + Extensions.swift */,
+				C49B5655290AF194001A5172 /* UIViewController + Extentions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				C49DD96D28F32B2800A0D1C0 /* CalendarCollectionViewCell.swift in Sources */,
 				C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */,
 				C442E61428F098D900A788AD /* UIFont + Extensions.swift in Sources */,
+				C49B5656290AF194001A5172 /* UIViewController + Extentions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
 				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
 			);

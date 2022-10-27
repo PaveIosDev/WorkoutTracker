@@ -32,6 +32,7 @@ class NewWorkoutViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        addGesture()
     }
     
     private func setupViews() {
@@ -58,15 +59,15 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func saveButtonTapped() {
         setModel()
-        RealmManager.shared.saveWorkoutModel(workoutModel)
+        saveModel()
     }
     
     private func setModel() {
         workoutModel.workoutName = nameView.getNameTextFieldText()
         
-        workoutModel.workoutDate = dateAndRepeatView.getDataAndRepeat().date
-        workoutModel.workoutNumberOfDay = dateAndRepeatView.getDataAndRepeat().date.getWeekdayNumber()
-        workoutModel.workoutRepeat = dateAndRepeatView.getDataAndRepeat().repeat
+        workoutModel.workoutDate = dateAndRepeatView.getDateAndRepeat().date
+        workoutModel.workoutNumberOfDay = dateAndRepeatView.getDateAndRepeat().date.getWeekdayNumber()
+        workoutModel.workoutRepeat = dateAndRepeatView.getDateAndRepeat().repeat
         
         workoutModel.workoutSets = repsOrTimerView.sets
         workoutModel.workoutReps = repsOrTimerView.reps
@@ -74,6 +75,43 @@ class NewWorkoutViewController: UIViewController {
         
         guard let imageData = testImage?.pngData() else { return }
         workoutModel.workoutImage = imageData
+    }
+    
+    private func saveModel() {
+        let text = nameView.getNameTextFieldText()
+        let count = text.filter { $0.isNumber || $0.isLetter }.count
+        
+        if count != 0 &&
+            workoutModel.workoutSets != 0 &&
+            (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
+//            RealmManager.shared.saveWorkoutModel(workoutModel)
+            workoutModel = WorkoutModel()
+            presentSimpleAlert(title: "Success", message: nil)
+            resetValues()
+        } else {
+            presentSimpleAlert(title: "Error", message: "Enter all parametrs")
+        }
+    }
+    
+    private func resetValues() {
+        nameView.deleteTextFieldText()
+        dateAndRepeatView.resetDateAndRepeat()
+        repsOrTimerView.resetSliderViewValues()
+    }
+    
+    private func addGesture() {
+        
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))
+        view.addGestureRecognizer(tapScreen)
+        
+        let swipeScreen = UISwipeGestureRecognizer(target: self, action: #selector(hideKeybord))
+        swipeScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(swipeScreen)
+        
+    }
+    
+    @objc private func hideKeybord() {
+        view.endEditing(true)
     }
 }
 

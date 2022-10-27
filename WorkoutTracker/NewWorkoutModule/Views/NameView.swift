@@ -33,6 +33,10 @@ class NameView: UIView {
         guard let text = nameTextField.text else { return "" }
         return text
     }
+    
+    public func deleteTextFieldText() {
+        nameTextField.text = ""
+    }
 }
 
 extension NameView {

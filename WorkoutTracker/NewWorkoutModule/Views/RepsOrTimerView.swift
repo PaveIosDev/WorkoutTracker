@@ -62,6 +62,13 @@ class RepsOrTimerView: UIView {
         repsView.delegate = self
         timerView.delegate = self
     }
+    
+    public func resetSliderViewValues() {
+        setsView.resetValues()
+        repsView.resetValues()
+        timerView.resetValues()
+    }
+    
 }
 
 
