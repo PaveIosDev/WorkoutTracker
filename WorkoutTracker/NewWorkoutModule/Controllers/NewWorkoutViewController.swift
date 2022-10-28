@@ -65,7 +65,7 @@ class NewWorkoutViewController: UIViewController {
     private func setModel() {
         workoutModel.workoutName = nameView.getNameTextFieldText()
         
-        workoutModel.workoutDate = dateAndRepeatView.getDateAndRepeat().date
+        workoutModel.workoutDate = dateAndRepeatView.getDateAndRepeat().date.localDate()
         workoutModel.workoutNumberOfDay = dateAndRepeatView.getDateAndRepeat().date.getWeekdayNumber()
         workoutModel.workoutRepeat = dateAndRepeatView.getDateAndRepeat().repeat
         
@@ -84,7 +84,7 @@ class NewWorkoutViewController: UIViewController {
         if count != 0 &&
             workoutModel.workoutSets != 0 &&
             (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
-//            RealmManager.shared.saveWorkoutModel(workoutModel)
+            RealmManager.shared.saveWorkoutModel(workoutModel)
             workoutModel = WorkoutModel()
             presentSimpleAlert(title: "Success", message: nil)
             resetValues()
