@@ -11,6 +11,7 @@ class MainTableView: UITableView {
     
     private let idTableViewCell = "idTableViewCell"
 
+    private var workoutsArray = [WorkoutModel]()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -38,19 +39,25 @@ class MainTableView: UITableView {
         dataSource = self
         delegate = self
     }
+    
+    public func setWorkoutsArray(array: [WorkoutModel]) {
+        workoutsArray = array
+    }
 }
 
 // MARK: - UITableViewDataSource
 
 extension MainTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
+        workoutsArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
             return UITableViewCell()
         }
+        let workoutModel = workoutsArray[indexPath.row]
+        cell.configure(model: workoutModel)
         return cell
     }
 }

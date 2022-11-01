@@ -107,6 +107,35 @@ class WorkoutTableViewCell: UITableViewCell {
     @objc private func startButtonTapped() {
         print("startButtonTapped")
     }
+    
+    public func configure(model: WorkoutModel) {
+        workoutNameLabel.text = model.workoutName
+        
+        if model.workoutTimer == 0 {
+            workoutRepsLabel.text = "Reps: \(model.workoutReps)"
+        } else {
+            workoutRepsLabel.text = "Timer: \(model.workoutTimer.getTimeFromSeconds())"
+        }
+        
+        workoutSetsLabel.text = "Sets: \(model.workoutSets)"
+        
+        if model.workoutStatus {
+            startButton.setTitle("COMPLETE", for: .normal)
+            startButton.tintColor = .white
+            startButton.backgroundColor = .specialDarkGreen
+            startButton.isEnabled = false
+        } else {
+            startButton.setTitle("START", for: .normal)
+            startButton.tintColor = .specialDarkGreen
+            startButton.backgroundColor = .specialYellow
+            startButton.isEnabled = true
+        }
+        
+        
+        guard let imageData = model.workoutImage,
+              let image = UIImage(data: imageData) else { return }
+        workoutImageView.image = image.withRenderingMode(.alwaysTemplate)
+    }
 }
 
 extension WorkoutTableViewCell {

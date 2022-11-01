@@ -32,6 +32,7 @@
 		C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */; };
 		C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */; };
 		C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */; };
+		C488053929117EF000F1080A /* YellowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488053829117EF000F1080A /* YellowButton.swift */; };
 		C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488211E29058DD3002DB0A8 /* Int + Extensions.swift */; };
 		C48821222905A8B7002DB0A8 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48821212905A8B7002DB0A8 /* WorkoutModel.swift */; };
 		C493A86628FF1CAD0080C8F6 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493A86528FF1CAD0080C8F6 /* UILabel + Extensions.swift */; };
@@ -77,6 +78,7 @@
 		C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictsTableViewCell.swift; sourceTree = "<group>"; };
+		C488053829117EF000F1080A /* YellowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowButton.swift; sourceTree = "<group>"; };
 		C488211E29058DD3002DB0A8 /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		C48821212905A8B7002DB0A8 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		C493A86528FF1CAD0080C8F6 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				C493A86A28FF1DA00080C8F6 /* CloseButton.swift */,
 				C493A86C28FF1DC70080C8F6 /* GreenButton.swift */,
 				C493A86E28FF1E140080C8F6 /* GreenSlider.swift */,
+				C488053829117EF000F1080A /* YellowButton.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				C493A86928FF1D370080C8F6 /* BrownTextField.swift in Sources */,
 				C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */,
 				C419DFC32901B6E7000E867B /* MainTableView.swift in Sources */,
+				C488053929117EF000F1080A /* YellowButton.swift in Sources */,
 				C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */,
 				C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */,
 				C419DFC82901C016000E867B /* CalendarCollectionView.swift in Sources */,

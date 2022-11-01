@@ -9,7 +9,7 @@ import UIKit
 
 class SetsAndRepsView: UIView {
     
-    private let setsAndRepsView = UILabel(text: "Details")
+    private let detailsLabel = UILabel(text: "Details")
     
     private let backView: UIView = {
         let view = UIView()
@@ -19,7 +19,11 @@ class SetsAndRepsView: UIView {
         return view
     }()
     
+    
+    
     private let exerciseView = ExerciseView()
+    private lazy var nextSetButton = YellowButton(text: "NEXT SET")
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,9 +39,15 @@ class SetsAndRepsView: UIView {
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
         //backgroundColor = .red
-        addSubview(setsAndRepsView)
+        addSubview(detailsLabel)
         addSubview(backView)
         addSubview(exerciseView)
+        addSubview(nextSetButton)
+        nextSetButton.addTarget(self, action: #selector(nextSetButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func nextSetButtonTapped() {
+        print("nextSetButtonTapped")
     }
 }
 
@@ -47,18 +57,23 @@ extension SetsAndRepsView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            setsAndRepsView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            setsAndRepsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
-            setsAndRepsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            detailsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            detailsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
+            detailsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
         
-            backView.topAnchor.constraint(equalTo: setsAndRepsView.bottomAnchor, constant: 3),
+            backView.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 3),
             backView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             backView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
             exerciseView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 14),
             exerciseView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 15),
-            exerciseView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -15)
+            exerciseView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -15),
+            
+            nextSetButton.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 185),
+            nextSetButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19),
+            nextSetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19),
+            nextSetButton.heightAnchor.constraint(equalToConstant: 43)
         ])
     }
 }

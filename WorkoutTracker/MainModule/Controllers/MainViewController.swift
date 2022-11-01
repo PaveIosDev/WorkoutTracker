@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainViewController: UIViewController {
 
@@ -66,6 +67,9 @@ class MainViewController: UIViewController {
     private let weatherView = WeatherView()
     private let tableView = MainTableView()
     
+    private let localRealm = try! Realm()
+    private var workoutArray: Results<WorkoutModel>!
+    
 //    override func viewWillLayoutSubviews() {
 //        
 //    }
@@ -76,6 +80,7 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        selectItem(date: Date().localDate())
     }
 
     
@@ -99,16 +104,33 @@ class MainViewController: UIViewController {
         newWorkoutViewController.modalPresentationStyle = .fullScreen
         present(newWorkoutViewController, animated: true)
     }
+    
+    private func getworkouts(date: Date) {
+
+        let weekday = date.getWeekdayNumber()
+        let dateStart = date.startEndDate().0
+        let dateEnd = date.startEndDate().1
+
+        let predicateRepeat = NSPredicate(format: "workoutNumberOfDay = \(weekday) AND workoutRepeat = true")
+        let predicateUnRepeat = NSPredicate(format: "workoutRepeat = false AND workoutDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnRepeat])
+
+        workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
+    }
 }
 
 // MARK: setConstraints - CalendarViewProtocol
 
 extension MainViewController: CalendarViewProtocol {
     func selectItem(date: Date) {
-        print(date)
+        getworkouts(date: date)
+        var testArray = [WorkoutModel]()
+        workoutArray.forEach { model in
+            testArray.append(model)
+        }
+        tableView.setWorkoutsArray(array: testArray)
+        tableView.reloadData()
     }
-    
-    
 }
 
 // MARK: setConstraints

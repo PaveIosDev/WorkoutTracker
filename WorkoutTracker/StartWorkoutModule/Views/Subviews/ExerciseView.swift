@@ -40,6 +40,7 @@ class ExerciseView: UIView {
         return view
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,8 +62,6 @@ class ExerciseView: UIView {
         addSubview(repsValueLabel)
         addSubview(lineViewReps)
     }
-    
-
 }
 
 // MARK: - setConstraints
@@ -94,7 +93,6 @@ private func setConstraints() {
         lineViewReps.heightAnchor.constraint(equalToConstant: 1),
         lineViewReps.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
         lineViewReps.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
-        
         ])
     }
 }
