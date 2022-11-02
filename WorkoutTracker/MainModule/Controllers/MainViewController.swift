@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import RealmSwift
 
 class MainViewController: UIViewController {
-
     
     private let userPhotoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -63,26 +61,37 @@ class MainViewController: UIViewController {
         return label
     }()
     
+    private let noWorkoutImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "noWorkout")
+        imageView.contentMode = .scaleAspectFit
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let calendarView = CalendarView()
     private let weatherView = WeatherView()
     private let tableView = MainTableView()
-    
-    private let localRealm = try! Realm()
-    private var workoutArray: Results<WorkoutModel>!
+  
+    private var workoutArray = [WorkoutModel]()
     
 //    override func viewWillLayoutSubviews() {
 //        
 //    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectItem(date: Date())
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setConstraints()
-        selectItem(date: Date().localDate())
+        //selectItem(date: Date().localDate())
     }
-
     
     private func setupViews() {
         view.backgroundColor = .specialBackground
@@ -96,6 +105,8 @@ class MainViewController: UIViewController {
         view.addSubview(weatherView)
         view.addSubview(workoutTodayLabel)
         view.addSubview(tableView)
+        tableView.mainDelegate = self
+        view.addSubview(noWorkoutImageView)
         
     }
     
@@ -106,7 +117,6 @@ class MainViewController: UIViewController {
     }
     
     private func getworkouts(date: Date) {
-
         let weekday = date.getWeekdayNumber()
         let dateStart = date.startEndDate().0
         let dateEnd = date.startEndDate().1
@@ -114,26 +124,43 @@ class MainViewController: UIViewController {
         let predicateRepeat = NSPredicate(format: "workoutNumberOfDay = \(weekday) AND workoutRepeat = true")
         let predicateUnRepeat = NSPredicate(format: "workoutRepeat = false AND workoutDate BETWEEN %@", [dateStart, dateEnd])
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnRepeat])
-
-        workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
+        let resultArray = RealmManager.shared.getResultsWorkoutModel()
+        let filteredArray = resultArray.filter(compound).sorted(byKeyPath: "workoutName")
+        workoutArray = filteredArray.map{$0}
+    }
+    
+    private func checkWorkoutToday() {
+        if workoutArray.count == 0 {
+            noWorkoutImageView.isHidden = false
+            tableView.isHidden = true
+        } else {
+            noWorkoutImageView.isHidden = true
+            tableView.isHidden = false
+        }
     }
 }
 
-// MARK: setConstraints - CalendarViewProtocol
+// MARK: - CalendarViewProtocol
 
 extension MainViewController: CalendarViewProtocol {
     func selectItem(date: Date) {
         getworkouts(date: date)
-        var testArray = [WorkoutModel]()
-        workoutArray.forEach { model in
-            testArray.append(model)
-        }
-        tableView.setWorkoutsArray(array: testArray)
+        tableView.setWorkoutsArray(array: workoutArray)
+        tableView.reloadData()
+        checkWorkoutToday()
+    }
+}
+
+extension MainViewController: MainTableViewProtocol {
+    func deleteWorkout(model: WorkoutModel, index: Int) {
+        RealmManager.shared.deleteWorkoutModel(model)
+        workoutArray.remove(at: index)
+        tableView.setWorkoutsArray(array: workoutArray)
         tableView.reloadData()
     }
 }
 
-// MARK: setConstraints
+// MARK: - setConstraints
 
 extension MainViewController {
     
@@ -171,7 +198,12 @@ extension MainViewController {
             tableView.topAnchor.constraint(equalTo: workoutTodayLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            
+            noWorkoutImageView.topAnchor.constraint(equalTo: workoutTodayLabel.bottomAnchor, constant: 0),
+            noWorkoutImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            noWorkoutImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            noWorkoutImageView.heightAnchor.constraint(equalTo: noWorkoutImageView.widthAnchor, multiplier: 1)
         ])
     }
 }
