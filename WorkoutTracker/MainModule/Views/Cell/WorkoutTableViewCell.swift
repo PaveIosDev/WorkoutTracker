@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WorkoutCellProtocol: AnyObject {
+    func startButtonTapped(model: WorkoutModel)
+}
+
 class WorkoutTableViewCell: UITableViewCell {
     
     private let backgroundCell: UIView = {
@@ -74,8 +78,12 @@ class WorkoutTableViewCell: UITableViewCell {
         return button
     }()
     
-    var labelsStackView = UIStackView()
+    private var labelsStackView = UIStackView()
 
+    weak var workoutCellDelegate: WorkoutCellProtocol?
+    
+    private var workoutModel = WorkoutModel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -105,10 +113,12 @@ class WorkoutTableViewCell: UITableViewCell {
     }
     
     @objc private func startButtonTapped() {
-        print("startButtonTapped")
+        workoutCellDelegate?.startButtonTapped(model: workoutModel)
     }
     
     public func configure(model: WorkoutModel) {
+        workoutModel = model
+        
         workoutNameLabel.text = model.workoutName
         
         if model.workoutTimer == 0 {

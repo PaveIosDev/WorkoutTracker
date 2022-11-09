@@ -64,6 +64,7 @@ extension MainTableView: UITableViewDataSource {
         }
         let workoutModel = workoutsArray[indexPath.row]
         cell.configure(model: workoutModel)
+        cell.workoutCellDelegate = mainDelegate as? WorkoutCellProtocol
         return cell
     }
 }

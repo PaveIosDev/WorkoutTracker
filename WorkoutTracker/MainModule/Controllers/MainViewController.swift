@@ -90,7 +90,6 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
-        //selectItem(date: Date().localDate())
     }
     
     private func setupViews() {
@@ -151,12 +150,22 @@ extension MainViewController: CalendarViewProtocol {
     }
 }
 
+// MARK: - MainTableViewProtocol
+
 extension MainViewController: MainTableViewProtocol {
     func deleteWorkout(model: WorkoutModel, index: Int) {
         RealmManager.shared.deleteWorkoutModel(model)
         workoutArray.remove(at: index)
         tableView.setWorkoutsArray(array: workoutArray)
         tableView.reloadData()
+    }
+}
+
+// MARK: - WorkoutCellProtocol
+
+extension MainViewController: WorkoutCellProtocol {
+    func startButtonTapped(model: WorkoutModel) {
+        print(model)
     }
 }
 

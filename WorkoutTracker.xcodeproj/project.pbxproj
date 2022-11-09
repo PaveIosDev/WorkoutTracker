@@ -48,6 +48,7 @@
 		C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */; };
 		C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */; };
 		C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D19D862905BB8D00F124BC /* SliderType.swift */; };
+		C4E4D417291AB9FB00ED85D8 /* DifferenceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4D416291AB9FB00ED85D8 /* DifferenceWorkout.swift */; };
 		C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EBD2908445E00BF16DD /* Date.swift */; };
 		C4ED1EC129084AE900BF16DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EC029084AE900BF16DD /* RealmManager.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		C4D19D862905BB8D00F124BC /* SliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderType.swift; sourceTree = "<group>"; };
+		C4E4D416291AB9FB00ED85D8 /* DifferenceWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceWorkout.swift; sourceTree = "<group>"; };
 		C4ED1EBD2908445E00BF16DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C4ED1EC029084AE900BF16DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +289,7 @@
 		C4593FB628F5DA8B00B46057 /* StatisticModule */ = {
 			isa = PBXGroup;
 			children = (
+				C4E4D415291AB9D500ED85D8 /* Models */,
 				C4593FBC28F7005D00B46057 /* Controllers */,
 				C4593FBB28F7005100B46057 /* Views */,
 			);
@@ -384,6 +387,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C4E4D415291AB9D500ED85D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4E4D416291AB9FB00ED85D8 /* DifferenceWorkout.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C4ED1EBF290849C000BF16DD /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E4D417291AB9FB00ED85D8 /* DifferenceWorkout.swift in Sources */,
 				C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */,
 				C493A86928FF1D370080C8F6 /* BrownTextField.swift in Sources */,
 				C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */,

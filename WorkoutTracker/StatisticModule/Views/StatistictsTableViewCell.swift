@@ -11,7 +11,7 @@ class StatistictsTableViewCell: UITableViewCell {
     
     private let differenceLabel: UILabel = {
         let label = UILabel()
-        label.text = "+2"
+        label.text = "2"
         label.textColor = .specialGreen
         label.font = .robotoMedium24()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +75,22 @@ class StatistictsTableViewCell: UITableViewCell {
         addSubview(beforeLabel)
         addSubview(nowLabel)
     }
+    
+    public func cofigure(differenceWorkout: DifferenceWorkout) {
+        nameLabel.text = differenceWorkout.name
+        beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
+        nowLabel.text = "Now: \(differenceWorkout.lastReps)"
+        
+        let difference = differenceWorkout.lastReps - differenceWorkout.firstReps
+        differenceLabel.text = "\(difference)"
+        
+        switch difference {
+        case ..<0: differenceLabel.textColor = .specialGreen
+        case 1...: differenceLabel.textColor = .specialYellow
+        default: differenceLabel.textColor = .specialGray
+        }
+    }
+    
 }
 
 // MARK: - setConstraints
