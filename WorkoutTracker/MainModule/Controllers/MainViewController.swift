@@ -209,7 +209,6 @@ extension MainViewController {
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 10),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             weatherView.heightAnchor.constraint(equalToConstant: 80),
-            weatherView.widthAnchor.constraint(equalToConstant: 260),
             
             workoutTodayLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
             workoutTodayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),

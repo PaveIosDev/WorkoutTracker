@@ -17,10 +17,20 @@ class TimerWorkoutViewController: UIViewController {
     
     private let ellipseImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.image = UIImage(named: "Ellipse")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private let timerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "1:35"
+        label.textColor = .specialGray
+        label.font = .robotoBold48()
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     private lazy var finishButton = GreenButton(text: "FINISH")
@@ -28,9 +38,17 @@ class TimerWorkoutViewController: UIViewController {
     private let detailsLabel = UILabel(text: "Details")
     
     private var workoutModel = WorkoutModel()
-
+    private let customAlert = CustomAlert()
+    private let shapeLayer = CAShapeLayer()
+    private var timer = Timer()
+    
+    
+    private var durationTimer = 0
+    private var numberOfSet = 0
+    
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
+        animationCircular()
     }
     
     override func viewDidLoad() {
@@ -39,6 +57,8 @@ class TimerWorkoutViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        addTaps()
+        setWorkoutParametrs()
     }
     
     private func setupViews() {
@@ -48,7 +68,9 @@ class TimerWorkoutViewController: UIViewController {
         view.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(ellipseImageView)
+        view.addSubview(timerLabel)
         view.addSubview(detailsLabel)
+        timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
         view.addSubview(timerWorkoutParametersView)
         view.addSubview(finishButton)
         finishButton.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
@@ -69,6 +91,49 @@ class TimerWorkoutViewController: UIViewController {
     public func setWorkoutModel(_ model: WorkoutModel) {
         workoutModel = model
     }
+    
+    private func addTaps() {
+        let tapLabel = UITapGestureRecognizer(target: self, action: #selector(startTimer))
+        timerLabel.isUserInteractionEnabled = true
+        timerLabel.addGestureRecognizer(tapLabel)
+    }
+    
+    @objc func startTimer() {
+        timerWorkoutParametersView.buttoIsEnable(false)
+        
+        if numberOfSet == workoutModel.workoutSets {
+            presentSimpleAlert(title: "Error", message: "Finish your workout")
+        } else {
+            basicAnimation()
+            timer = Timer.scheduledTimer(timeInterval: 1,
+                          target: self,
+                          selector: #selector(timerAction),
+                          userInfo: nil,
+                          repeats: true)
+            
+            
+        }
+    }
+    
+    @objc func timerAction() {
+        durationTimer -= 1
+        print(durationTimer)
+        
+        if durationTimer == 0 {
+            timer.invalidate()
+            durationTimer = workoutModel.workoutTimer
+            
+            numberOfSet += 1
+            timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
+            timerWorkoutParametersView.buttoIsEnable(true)
+        }
+    }
+    
+    private func setWorkoutParametrs() {
+        let (min, sec) = workoutModel.workoutTimer.convertSeconds()
+        timerLabel.text = "\(min) : \(sec.setZeroForSecond())"
+        durationTimer = workoutModel.workoutTimer
+    }
 }
 
 //MARK: - NextSetTimerProtocol
@@ -81,6 +146,43 @@ extension TimerWorkoutViewController: NextSetTimerProtocol {
     
     func editingTimerTapped() {
         print("editing2")
+    }
+}
+
+//MARK: Animation
+
+extension TimerWorkoutViewController {
+    
+    private func animationCircular() {
+    
+        let center = CGPoint(x: ellipseImageView.frame.width / 2,
+                             y: ellipseImageView.frame.height / 2)
+        
+        let endAngle = (-CGFloat.pi / 2)
+        let startAngle = 2 * CGFloat.pi + endAngle
+
+        let circularPath = UIBezierPath(arcCenter: center,
+                                        radius: 127,
+                                        startAngle: startAngle,
+                                        endAngle: endAngle,
+                                        clockwise: false)
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.lineWidth = 21
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeEnd = 1
+        shapeLayer.lineCap = .round
+        shapeLayer.strokeColor = UIColor.specialGreen.cgColor
+        ellipseImageView.layer.addSublayer(shapeLayer)
+    }
+    
+    private func basicAnimation() {
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 0
+        basicAnimation.duration = CFTimeInterval(durationTimer)
+        basicAnimation.fillMode = .forwards
+        basicAnimation.isRemovedOnCompletion = true
+        shapeLayer.add(basicAnimation, forKey: "basicAnimation")
     }
 }
 
@@ -103,6 +205,10 @@ extension TimerWorkoutViewController {
             ellipseImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             ellipseImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             ellipseImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            
+            timerLabel.leadingAnchor.constraint(equalTo: ellipseImageView.leadingAnchor, constant: 40),
+            timerLabel.trailingAnchor.constraint(equalTo: ellipseImageView.trailingAnchor, constant: -40),
+            timerLabel.centerYAnchor.constraint(equalTo: ellipseImageView.centerYAnchor),
 
             detailsLabel.topAnchor.constraint(equalTo: ellipseImageView.bottomAnchor, constant: 20),
             detailsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),

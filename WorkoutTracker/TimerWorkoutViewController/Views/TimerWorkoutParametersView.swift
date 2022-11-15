@@ -97,6 +97,7 @@ class TimerWorkoutParametersView: UIView {
         setsStackView = UIStackView(arrangedSubviews: [setsLabel, numberOfSetsLabel],
                                     axis: .horizontal,
                                     spacing: 10)
+        setsStackView.distribution = .equalSpacing
         addSubview(setsStackView)
         addSubview(setsLineView)
  
@@ -116,6 +117,17 @@ class TimerWorkoutParametersView: UIView {
     
     @objc private func nextSetsButtonTapped() {
         cellNextSetTimerDelegate?.nextSetTimerTapped()
+    }
+    
+    public func refreshLabels(model: WorkoutModel, numberOfSet: Int) {
+        workoutNameLabel.text = model.workoutName
+        numberOfSetsLabel.text = "\(numberOfSet)/\(model.workoutSets)"
+        numberOfTimerLabel.text = "\(model.workoutTimer.getTimeFromSeconds())"
+    }
+    
+    public func buttoIsEnable(_ value: Bool) {
+        editingButton.isEnabled = value
+        nextSetsButton.isEnabled = value
     }
     
     private func setConstraints() {
