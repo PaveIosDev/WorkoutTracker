@@ -81,11 +81,19 @@ class TimerWorkoutViewController: UIViewController {
     }
 
     @objc private func closeButtonTapped() {
+        timer.invalidate()
         dismiss(animated: true, completion: nil)
     }
     
     @objc private func finishButtonTapped() {
-        print("Finish")
+        if numberOfSet == workoutModel.workoutSets {
+            dismiss(animated: true)
+            RealmManager.shared.updateStatusWorkoutModel(model: workoutModel)
+        } else {
+            presentAlertWithActions(title: "Warning", message: "You haven't finished your workout") {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     public func setWorkoutModel(_ model: WorkoutModel) {
@@ -110,8 +118,6 @@ class TimerWorkoutViewController: UIViewController {
                           selector: #selector(timerAction),
                           userInfo: nil,
                           repeats: true)
-            
-            
         }
     }
     
@@ -127,6 +133,9 @@ class TimerWorkoutViewController: UIViewController {
             timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
             timerWorkoutParametersView.buttoIsEnable(true)
         }
+        
+        let (min, sec) = durationTimer.convertSeconds()
+        timerLabel.text = "\(min) : \(sec.setZeroForSecond())"
     }
     
     private func setWorkoutParametrs() {
@@ -141,11 +150,31 @@ class TimerWorkoutViewController: UIViewController {
 extension TimerWorkoutViewController: NextSetTimerProtocol {
     
     func nextSetTimerTapped() {
-        print("next2")
-    }
+        if numberOfSet < workoutModel.workoutSets {
+            numberOfSet += 1
+            timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
+        } else {
+            presentSimpleAlert(title: "Error", message: "Finish your workout")
+        }    }
     
     func editingTimerTapped() {
-        print("editing2")
+        customAlert.presentCustomAlert(viewController: self, repsOrTimer: "Timer of set") { [weak self] sets, timerOfSet in
+            
+            guard let self = self else { return }
+            if sets != "" && timerOfSet != "" {
+                guard let numberOfSets = Int(sets),
+                      let numberOfTimer = Int(timerOfSet) else { return }
+                RealmManager.shared.updateSetsTimerWorkoutModel(model: self.workoutModel,
+                                                                sets: numberOfSets,
+                                                                timer: numberOfTimer)
+                
+                let (min, sec) = numberOfTimer.convertSeconds()
+                self.timerLabel.text = "\(min) : \(sec.setZeroForSecond())"
+                self.durationTimer = numberOfTimer
+                self.timerWorkoutParametersView.refreshLabels(model: self.workoutModel,
+                                                              numberOfSet: self.numberOfSet)
+            }
+        }
     }
 }
 
