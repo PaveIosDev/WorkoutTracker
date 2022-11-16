@@ -125,7 +125,7 @@ class TimerWorkoutParametersView: UIView {
         numberOfTimerLabel.text = "\(model.workoutTimer.getTimeFromSeconds())"
     }
     
-    public func buttoIsEnable(_ value: Bool) {
+    public func buttonIsEnable(_ value: Bool) {
         editingButton.isEnabled = value
         nextSetsButton.isEnabled = value
     }

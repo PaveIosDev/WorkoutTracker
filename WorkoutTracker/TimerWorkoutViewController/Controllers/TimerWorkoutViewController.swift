@@ -107,7 +107,7 @@ class TimerWorkoutViewController: UIViewController {
     }
     
     @objc func startTimer() {
-        timerWorkoutParametersView.buttoIsEnable(false)
+        timerWorkoutParametersView.buttonIsEnable(false)
         
         if numberOfSet == workoutModel.workoutSets {
             presentSimpleAlert(title: "Error", message: "Finish your workout")
@@ -131,7 +131,7 @@ class TimerWorkoutViewController: UIViewController {
             
             numberOfSet += 1
             timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
-            timerWorkoutParametersView.buttoIsEnable(true)
+            timerWorkoutParametersView.buttonIsEnable(true)
         }
         
         let (min, sec) = durationTimer.convertSeconds()
