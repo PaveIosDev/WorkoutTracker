@@ -15,6 +15,8 @@ class ProfileView: UIView {
 
     private let nameLabel = UILabel(text: "PAVEL YAKOVENKO", font: .robotoMedium24(), textColor: .white)
 
+
+    
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .specialLightBrown
@@ -77,7 +79,7 @@ extension ProfileView {
             avatarView.heightAnchor.constraint(equalToConstant: 112),
 
             nameLabel.topAnchor.constraint(equalTo: avatarView.topAnchor, constant: 70),
-            nameLabel.centerXAnchor.constraint(equalTo: avatarView.centerXAnchor)
+            nameLabel.centerXAnchor.constraint(equalTo: avatarView.centerXAnchor),
 
         ])
     }
