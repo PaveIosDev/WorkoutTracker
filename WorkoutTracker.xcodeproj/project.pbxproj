@@ -31,6 +31,8 @@
 		C4593FB528F5D8A700B46057 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */; };
 		C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */; };
 		C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */; };
+		C461F7742927DD7E006B41B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461F7732927DD7E006B41B8 /* ProfileViewController.swift */; };
+		C461F7782927F6C0006B41B8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461F7772927F6C0006B41B8 /* ProfileView.swift */; };
 		C488053929117EF000F1080A /* YellowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488053829117EF000F1080A /* YellowButton.swift */; };
 		C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488211E29058DD3002DB0A8 /* Int + Extensions.swift */; };
 		C48821222905A8B7002DB0A8 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48821212905A8B7002DB0A8 /* WorkoutModel.swift */; };
@@ -80,6 +82,8 @@
 		C4593FB428F5D8A700B46057 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		C4593FB728F5DD8D00B46057 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C4593FB928F6FD3F00B46057 /* StatistictsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictsTableViewCell.swift; sourceTree = "<group>"; };
+		C461F7732927DD7E006B41B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C461F7772927F6C0006B41B8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C488053829117EF000F1080A /* YellowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowButton.swift; sourceTree = "<group>"; };
 		C488211E29058DD3002DB0A8 /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		C48821212905A8B7002DB0A8 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
@@ -141,8 +145,9 @@
 				C40DCF2028ECB09E009E4F3A /* MainModule */,
 				C4C2CEAB28FC511200FCD071 /* NewWorkoutModule */,
 				C43112CF290ED4E600C88763 /* RepsWorkoutModule */,
-				C4E4D41829214E5D00ED85D8 /* TimerWorkoutViewController */,
+				C4E4D41829214E5D00ED85D8 /* TimerWorkoutModule */,
 				C4593FB628F5DA8B00B46057 /* StatisticModule */,
+				C461F76E2927DC0D006B41B8 /* ProfileModule */,
 				C442E60F28F090B300A788AD /* Extensions */,
 				C4ED1EBF290849C000BF16DD /* Service */,
 				C40DCF1F28ECB040009E4F3A /* Resources */,
@@ -309,6 +314,31 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C461F76E2927DC0D006B41B8 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				C461F76F2927DC88006B41B8 /* Controllers */,
+				C461F7702927DCD1006B41B8 /* Views */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		C461F76F2927DC88006B41B8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C461F7732927DD7E006B41B8 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C461F7702927DCD1006B41B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C461F7772927F6C0006B41B8 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C48821202905A55F002DB0A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,13 +422,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C4E4D41829214E5D00ED85D8 /* TimerWorkoutViewController */ = {
+		C4E4D41829214E5D00ED85D8 /* TimerWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
 				C4E4D41A29214EC400ED85D8 /* Controllers */,
 				C4E4D41929214EAD00ED85D8 /* Views */,
 			);
-			path = TimerWorkoutViewController;
+			path = TimerWorkoutModule;
 			sourceTree = "<group>";
 		};
 		C4E4D41929214EAD00ED85D8 /* Views */ = {
@@ -540,9 +570,11 @@
 				C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */,
 				C442E61428F098D900A788AD /* UIFont + Extensions.swift in Sources */,
 				C43112D3290EEC9000C88763 /* WorkoutParametrsView.swift in Sources */,
+				C461F7742927DD7E006B41B8 /* ProfileViewController.swift in Sources */,
 				C49B5656290AF194001A5172 /* UIViewController + Extentions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
 				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
+				C461F7782927F6C0006B41B8 /* ProfileView.swift in Sources */,
 				C4E4D4202921536900ED85D8 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
