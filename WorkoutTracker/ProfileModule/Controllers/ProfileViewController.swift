@@ -19,6 +19,22 @@ class ProfileViewController: UIViewController {
                                       font: .robotoBold16(),
                                       textColor: .specialGray)
     
+    private lazy var  editingButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "edittingImage")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setTitle("Editing", for: .normal)
+        button.contentHorizontalAlignment = .right
+        button.tintColor = .specialGreen
+        button.titleLabel?.font = .robotoBold16()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(editingButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let profileCollectionView = ProfileCollectionView()
+
+    private let targetLabel = UILabel(text: "TARGET: 20 workouts", font: .robotoBold16(), textColor: .specialGray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +47,13 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileView)
         view.addSubview(heightLabel)
         view.addSubview(weightLabel)
+        view.addSubview(editingButton)
+        view.addSubview(profileCollectionView)
+        view.addSubview(targetLabel)
+    }
+    
+    @objc private func editingButtonTapped() {
+        print("editing")
     }
 }
 
@@ -50,8 +73,18 @@ extension ProfileViewController {
             heightLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
             weightLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 5),
-            weightLabel.leadingAnchor.constraint(equalTo: heightLabel.trailingAnchor, constant: 14)
+            weightLabel.leadingAnchor.constraint(equalTo: heightLabel.trailingAnchor, constant: 14),
+            
+            editingButton.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 5),
+            editingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17),
+            
+            profileCollectionView.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 51),
+            profileCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            profileCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            profileCollectionView.heightAnchor.constraint(equalToConstant: 250),
+            
+            targetLabel.topAnchor.constraint(equalTo: profileCollectionView.bottomAnchor, constant: 23),
+            targetLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14)
         ])
     }
-    
 }

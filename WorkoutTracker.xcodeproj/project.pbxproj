@@ -14,6 +14,9 @@
 		C40DCF1728ECA860009E4F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DCF1528ECA860009E4F3A /* LaunchScreen.storyboard */; };
 		C40DCF2428EDD7A9009E4F3A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */; };
 		C40DCF2628EDF1AC009E4F3A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */; };
+		C415E787292A883D009A6D97 /* ProfileCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415E786292A883D009A6D97 /* ProfileCollectionView.swift */; };
+		C415E78A292A91FB009A6D97 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415E789292A91FB009A6D97 /* ProfileCollectionViewCell.swift */; };
+		C415E78E292AABC4009A6D97 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415E78D292AABC4009A6D97 /* EditingProfileViewController.swift */; };
 		C419DFC32901B6E7000E867B /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC22901B6E7000E867B /* MainTableView.swift */; };
 		C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC52901BB13000E867B /* StatisticTableView.swift */; };
 		C419DFC82901C016000E867B /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419DFC72901C016000E867B /* CalendarCollectionView.swift */; };
@@ -67,6 +70,9 @@
 		C40DCF1828ECA860009E4F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40DCF2328EDD7A9009E4F3A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C40DCF2528EDF1AC009E4F3A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		C415E786292A883D009A6D97 /* ProfileCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionView.swift; sourceTree = "<group>"; };
+		C415E789292A91FB009A6D97 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		C415E78D292AABC4009A6D97 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		C419DFC22901B6E7000E867B /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		C419DFC52901BB13000E867B /* StatisticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableView.swift; sourceTree = "<group>"; };
 		C419DFC72901C016000E867B /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
@@ -204,6 +210,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C415E788292A91D7009A6D97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C415E789292A91FB009A6D97 /* ProfileCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C419DFC12901B6C4000E867B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				C461F7732927DD7E006B41B8 /* ProfileViewController.swift */,
+				C415E78D292AABC4009A6D97 /* EditingProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,7 +349,9 @@
 		C461F7702927DCD1006B41B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C415E788292A91D7009A6D97 /* Cell */,
 				C461F7772927F6C0006B41B8 /* ProfileView.swift */,
+				C415E786292A883D009A6D97 /* ProfileCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -555,7 +572,9 @@
 				C493A87128FF20610080C8F6 /* NameView.swift in Sources */,
 				C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */,
 				C48821222905A8B7002DB0A8 /* WorkoutModel.swift in Sources */,
+				C415E787292A883D009A6D97 /* ProfileCollectionView.swift in Sources */,
 				C493A86B28FF1DA00080C8F6 /* CloseButton.swift in Sources */,
+				C415E78E292AABC4009A6D97 /* EditingProfileViewController.swift in Sources */,
 				C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
 				C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */,
@@ -571,6 +590,7 @@
 				C442E61428F098D900A788AD /* UIFont + Extensions.swift in Sources */,
 				C43112D3290EEC9000C88763 /* WorkoutParametrsView.swift in Sources */,
 				C461F7742927DD7E006B41B8 /* ProfileViewController.swift in Sources */,
+				C415E78A292A91FB009A6D97 /* ProfileCollectionViewCell.swift in Sources */,
 				C49B5656290AF194001A5172 /* UIViewController + Extentions.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
 				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
