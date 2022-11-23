@@ -9,7 +9,13 @@ import UIKit
 
 class EditingProfileViewController: UIViewController {
 
+    private let editingLabel = UILabel(text: "EDITING PROFILE",
+                                           font: .robotoMedium24(),
+                                           textColor: .specialGray)
+    
     let profileView = ProfileView()
+    
+    private lazy var closeButton = CloseButton(type: .system)
     
     private let firstNameLabel = UILabel(text: "First name",
                                          font: .robotoMedium14(),
@@ -35,7 +41,7 @@ class EditingProfileViewController: UIViewController {
     
     private let weightTextField = BrownTextField()
     
-    private lazy var saveButton = GreenButton()
+    private lazy var saveButton = GreenButton(text: "SAVE")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +53,10 @@ class EditingProfileViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
+        view.addSubview(editingLabel)
         view.addSubview(profileView)
+        view.addSubview(closeButton)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(firstNameLabel)
         view.addSubview(firstNameTextField)
         view.addSubview(secondNameLabel)
@@ -58,6 +67,10 @@ class EditingProfileViewController: UIViewController {
         view.addSubview(weightTextField)
         view.addSubview(saveButton)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func closeButtonTapped() {
+        dismiss(animated: true)
     }
     
     @objc func saveButtonTapped() {
@@ -71,9 +84,18 @@ extension EditingProfileViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            profileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            
+            editingLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            editingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            closeButton.centerYAnchor.constraint(equalTo: editingLabel.centerYAnchor),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            closeButton.widthAnchor.constraint(equalToConstant: 33),
+            closeButton.heightAnchor.constraint(equalToConstant: 33),
+            
+            profileView.topAnchor.constraint(equalTo: editingLabel.bottomAnchor, constant: 54),
             profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            profileView.heightAnchor.constraint(equalToConstant: 210),
+            profileView.heightAnchor.constraint(equalToConstant: 118),
             profileView.widthAnchor.constraint(equalToConstant: 360),
             
             firstNameLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 39),
@@ -106,12 +128,12 @@ extension EditingProfileViewController {
             weightTextField.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: 2),
             weightTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             weightTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
-            weightTextField.heightAnchor.constraint(equalToConstant: 40)
+            weightTextField.heightAnchor.constraint(equalToConstant: 40),
             
-//           saveButton.topAnchor.constraint(equalTo: weightTextField.bottomAnchor, constant: 41),
-//            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            saveButton.widthAnchor.constraint(equalToConstant: 345),
-//            saveButton.heightAnchor.constraint(equalToConstant: 55)
+            saveButton.topAnchor.constraint(equalTo: weightTextField.bottomAnchor, constant: 41),
+            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveButton.widthAnchor.constraint(equalToConstant: 345),
+            saveButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

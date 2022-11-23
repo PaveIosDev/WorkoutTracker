@@ -9,7 +9,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-
+    private let profileLabel = UILabel(text: "PROFILE",
+                                           font: .robotoMedium24(),
+                                           textColor: .specialGray)
+    
     private let profileView = ProfileView()
     
     private let heightLabel = UILabel(text: "Height: 178",
@@ -44,6 +47,7 @@ class ProfileViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .specialBackground
+        view.addSubview(profileLabel)
         view.addSubview(profileView)
         view.addSubview(heightLabel)
         view.addSubview(weightLabel)
@@ -52,8 +56,11 @@ class ProfileViewController: UIViewController {
         view.addSubview(targetLabel)
     }
     
-    @objc private func editingButtonTapped() {
-        print("editing")
+    @objc private func editingButtonTapped(model: WorkoutModel) {
+                let editingProfileViewController = EditingProfileViewController()
+                editingProfileViewController.modalPresentationStyle = .fullScreen
+                present(editingProfileViewController, animated: true)
+            
     }
 }
 
@@ -63,9 +70,13 @@ extension ProfileViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            profileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            
+            profileLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            profileLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            profileView.topAnchor.constraint(equalTo: profileLabel.bottomAnchor, constant: 54),
             profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            profileView.heightAnchor.constraint(equalToConstant: 210),
+            profileView.heightAnchor.constraint(equalToConstant: 118),
             profileView.widthAnchor.constraint(equalToConstant: 360),
         
             

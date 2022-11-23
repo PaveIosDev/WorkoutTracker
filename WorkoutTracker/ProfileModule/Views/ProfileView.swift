@@ -8,14 +8,8 @@
 import UIKit
 
 class ProfileView: UIView {
-    
-    private let profileLabel = UILabel(text: "PROFILE",
-                                       font: .robotoMedium24(),
-                                       textColor: .specialGray)
 
     private let nameLabel = UILabel(text: "PAVEL YAKOVENKO", font: .robotoMedium24(), textColor: .white)
-
-
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
@@ -35,7 +29,6 @@ class ProfileView: UIView {
         return view
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -48,10 +41,8 @@ class ProfileView: UIView {
     }
     
     private func setupViews() {
-
         translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(profileLabel)
         addSubview(avatarView)
         addSubview(avatarImageView)
         addSubview(nameLabel)
@@ -64,16 +55,13 @@ extension ProfileView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-        
-            profileLabel.topAnchor.constraint(equalTo: topAnchor, constant: 3),
-            profileLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             avatarImageView.centerYAnchor.constraint(equalTo: avatarView.topAnchor),
             avatarImageView.centerXAnchor.constraint(equalTo: avatarView.centerXAnchor),
             avatarImageView.heightAnchor.constraint(equalToConstant: 100),
             avatarImageView.widthAnchor.constraint(equalToConstant: 100),
 
-            avatarView.topAnchor.constraint(equalTo: profileLabel.bottomAnchor, constant: 64),
+            avatarView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             avatarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             avatarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             avatarView.heightAnchor.constraint(equalToConstant: 112),
