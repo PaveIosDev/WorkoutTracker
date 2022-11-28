@@ -1,5 +1,5 @@
 WorkoutTracker - трекер тренировок.
-Приложение для учета тренировок: дата тренировки, кол-во сетов, повторений или тайминг тренировки. 
+Приложение для учета тренировок: дата тренировки, кол-во подходов, повторений или тайминг тренировки. 
 Статистика выполенных упражнений с поиском.
 
 Верстка кодом (без storyboard)
@@ -9,8 +9,7 @@ WorkoutTracker - трекер тренировок.
 - CollectionView (+ создание customCollectionViewCell)
 - ScrollView
 - AlertController (+ создание custom alert)
-- DatePicker
-- UIKit (label, button, segmentedControll, Switch, Slider, UIView, UIImageView)
+- UIKit (label, button, segmentedControll, Switch, Slider, UIView, UIImageView, textField, DatePicker)
 - Date (преобразование)
 - Notifications
 - Основы CoreAnimation
@@ -22,4 +21,21 @@ WorkoutTracker - трекер тренировок.
 - OnBoarding + LaunchScreen
 
 Главный экран: 
-Коллекция с календарем, добавление новой тренировки, сиписок тренировок в конкретный день.
+- коллекция с календарем, 
+- блок с погодой (JSON), 
+- добавление новой тренировки - кнопка, 
+- таблица со списоком тренировок.
+
+
+Создание новой тренировки: 
+- название,
+- дата, 
+- повторять да/нет,
+- подходы
+- повторения или таймер
+
+
+
+
+
+
