@@ -85,6 +85,7 @@ class NewWorkoutViewController: UIViewController {
             workoutModel.workoutSets != 0 &&
             (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
             RealmManager.shared.saveWorkoutModel(workoutModel)
+            createNotification()
             workoutModel = WorkoutModel()
             presentSimpleAlert(title: "Success", message: nil)
             resetValues()
@@ -113,6 +114,13 @@ class NewWorkoutViewController: UIViewController {
     @objc private func hideKeybord() {
         view.endEditing(true)
     }
+    
+    private func createNotification() {
+        let notifications = Notifications()
+        let stringDate = workoutModel.workoutDate.ddMMyyyyFromDate()
+        notifications.scheduleDateNotification(date: workoutModel.workoutDate, id: "workout" + stringDate)
+    }
+    
 }
 
 //MARK: - Set Constraints

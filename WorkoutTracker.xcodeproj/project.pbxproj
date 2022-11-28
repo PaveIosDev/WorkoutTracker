@@ -57,6 +57,7 @@
 		C4E4D4202921536900ED85D8 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4D41F2921536900ED85D8 /* CustomAlert.swift */; };
 		C4ED1EBE2908445E00BF16DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EBD2908445E00BF16DD /* Date.swift */; };
 		C4ED1EC129084AE900BF16DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED1EC029084AE900BF16DD /* RealmManager.swift */; };
+		C4F17C8229350EAD00F434E5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F17C8129350EAD00F434E5 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		C4E4D41F2921536900ED85D8 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		C4ED1EBD2908445E00BF16DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C4ED1EC029084AE900BF16DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		C4F17C8129350EAD00F434E5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				C40DCF0A28ECA85F009E4F3A /* AppDelegate.swift */,
 				C40DCF0C28ECA85F009E4F3A /* SceneDelegate.swift */,
+				C4F17C8129350EAD00F434E5 /* Notifications.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				C419DFC82901C016000E867B /* CalendarCollectionView.swift in Sources */,
 				C40DCF0F28ECA85F009E4F3A /* MainViewController.swift in Sources */,
 				C40AEF5429311A2500DF5D4A /* UserModel.swift in Sources */,
+				C4F17C8229350EAD00F434E5 /* Notifications.swift in Sources */,
 				C4593FB828F5DD8D00B46057 /* StatisticsViewController.swift in Sources */,
 				C40DCF0B28ECA85F009E4F3A /* AppDelegate.swift in Sources */,
 				C493A86D28FF1DC70080C8F6 /* GreenButton.swift in Sources */,

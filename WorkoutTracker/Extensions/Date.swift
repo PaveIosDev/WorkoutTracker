@@ -68,4 +68,13 @@ extension Date {
         }()
         return (local, dateEnd)
     }
+    
+    func ddMMyyyyFromDate() -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let date = formatter.string(from: self)
+        return date
+    }
+    
 }
