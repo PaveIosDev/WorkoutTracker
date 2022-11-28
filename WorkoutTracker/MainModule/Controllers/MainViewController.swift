@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
         imageView.backgroundColor = #colorLiteral(red: 0.8044032454, green: 0.8044223189, blue: 0.8044120669, alpha: 1)
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 5
-        imageView.layer.cornerRadius = 50        
+        imageView.layer.cornerRadius = 50
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -83,6 +84,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectItem(date: Date())
+        setupUserParametrs()
     }
     
     override func viewDidLoad() {
@@ -135,6 +137,21 @@ class MainViewController: UIViewController {
         } else {
             noWorkoutImageView.isHidden = true
             tableView.isHidden = false
+        }
+    }
+    
+    private func setupUserParametrs() {
+        
+        let userArray = RealmManager.shared.getResultsUserModel()
+        
+        if userArray.count != 0 {
+            userNameLabel.text = userArray[0].userFirstName + " " + userArray[0].userSecondName
+            
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data) else {
+                      return
+                  }
+            userPhotoImageView.image = image
         }
     }
 }
