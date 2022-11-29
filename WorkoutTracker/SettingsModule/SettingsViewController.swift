@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class SettingsViewController: UIViewController {
     
@@ -225,6 +226,37 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true)
     }
 }
+
+//@available(iOS 14, *)
+//extension SettingsViewController: PHPickerViewControllerDelegate {
+//
+//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+//        picker.dismiss(animated: true, completion: .none)
+//        results.forEach { result in
+//            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+//                guard let image = reading as? UIImage, error == nil else  {
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                    self.addPhotoImageView.image = image
+//                    self.addPhotoImageView.contentMode = .scaleAspectFill
+//                }
+//            }
+//        }
+//    }
+//
+//    private func presentPHPicker() {
+//
+//        var phPickerConfig = PHPickerConfiguration(photoLibrary: .shared())
+//        phPickerConfig.selectionLimit = 1
+//        phPickerConfig.filter = PHPickerFilter.any(of: [.images])
+//
+//        let phPickerVC = PHPickerViewController(configuration: phPickerConfig)
+//        phPickerVC.delegate = self
+//        present(phPickerVC, animated: true)
+//    }
+//}
+
 
 //MARK: - SetConstraints
 
