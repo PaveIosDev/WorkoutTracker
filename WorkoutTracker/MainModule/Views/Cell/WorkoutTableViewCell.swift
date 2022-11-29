@@ -132,7 +132,7 @@ class WorkoutTableViewCell: UITableViewCell {
         if model.workoutStatus {
             startButton.setTitle("COMPLETE", for: .normal)
             startButton.tintColor = .white
-            startButton.backgroundColor = .specialDarkGreen
+            startButton.backgroundColor = .specialGreen
             startButton.isEnabled = false
         } else {
             startButton.setTitle("START", for: .normal)
