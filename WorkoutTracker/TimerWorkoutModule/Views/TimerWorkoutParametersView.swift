@@ -14,11 +14,11 @@ protocol NextSetTimerProtocol: AnyObject {
 
 class TimerWorkoutParametersView: UIView {
 
-    private let workoutNameLabel = UILabel(text: "Name",
+    private let workoutNameLabel = UILabel(text: "Имя",
                                           font: .robotoMedium24(),
                                           textColor: .specialGray)
 
-    private let setsLabel = UILabel(text: "Sets",
+    private let setsLabel = UILabel(text: "Повторения",
                                           font: .robotoMedium18(),
                                           textColor: .specialGray)
     
@@ -33,7 +33,7 @@ class TimerWorkoutParametersView: UIView {
         return view
     }()
 
-    private let timerLabel = UILabel(text: "Time of set",
+    private let timerLabel = UILabel(text: "Время упражнения",
                                           font: .robotoMedium18(),
                                           textColor: .specialGray)
     
@@ -51,7 +51,7 @@ class TimerWorkoutParametersView: UIView {
     private lazy var  editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "pencil")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.setTitle("Editing", for: .normal)
+        button.setTitle("Редактировать", for: .normal)
         button.tintColor = .specialLightBrown
         button.titleLabel?.font = .robotoMedium16()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class TimerWorkoutParametersView: UIView {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialYellow
         button.layer.cornerRadius = 10
-        button.setTitle("NEXT SET", for: .normal)
+        button.setTitle("Продолжить", for: .normal)
         button.tintColor = .specialGray
         button.titleLabel?.font = .robotoBold16()
         button.translatesAutoresizingMaskIntoConstraints = false

@@ -9,7 +9,7 @@ import UIKit
 
 class NewWorkoutViewController: UIViewController {
     
-    private let newWorkoutLabel = UILabel(text: "NEW WORKOUT",
+    private let newWorkoutLabel = UILabel(text: "НОВАЯ ТРЕНИРОВКА",
                                           font: .robotoMedium24(),
                                           textColor: .specialGray)
     private lazy var closeButton = CloseButton(type: .system)
@@ -18,7 +18,7 @@ class NewWorkoutViewController: UIViewController {
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
 
-    private lazy var saveButton = GreenButton(text: "SAVE")
+    private lazy var saveButton = GreenButton(text: "СОХРАНИТЬ")
 
     private var stackView = UIStackView()
     

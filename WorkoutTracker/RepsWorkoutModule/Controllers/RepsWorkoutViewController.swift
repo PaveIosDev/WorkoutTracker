@@ -9,7 +9,7 @@ import UIKit
 
 class RepsWorkoutViewController: UIViewController {
 
-    private let newWorkoutLabel = UILabel(text: "START WORKOUT",
+    private let newWorkoutLabel = UILabel(text: "ТРЕНИРОВКА",
                                           font: .robotoMedium24(),
                                           textColor: .specialGray)
     
@@ -23,9 +23,9 @@ class RepsWorkoutViewController: UIViewController {
         return imageView
     }()
 
-    private let detailsLabel = UILabel(text: "Details")
+    private let detailsLabel = UILabel(text: "Детали")
     private let workoutParametersView = WorkoutParametersView()
-    private lazy var finishButton = GreenButton(text: "FINISH")
+    private lazy var finishButton = GreenButton(text: "ЗАКОНЧИТЬ")
     
     private var workoutModel = WorkoutModel()
     private var numberOfSet = 1
@@ -72,7 +72,7 @@ class RepsWorkoutViewController: UIViewController {
             dismiss(animated: true)
             RealmManager.shared.updateStatusWorkoutModel(model: workoutModel)
         } else {
-            presentAlertWithActions(title: "Warning", message: "You haven't finished your workout") {
+            presentAlertWithActions(title: "Внимание", message: "Вы не закончили тренировку") {
                 self.dismiss(animated: true)
             }
         }
@@ -88,7 +88,7 @@ class RepsWorkoutViewController: UIViewController {
 extension RepsWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
-        customAlert.presentCustomAlert(viewController: self, repsOrTimer: "Reps") { [weak self] sets, reps in
+        customAlert.presentCustomAlert(viewController: self, repsOrTimer: "Повторения") { [weak self] sets, reps in
             
             guard let self = self else { return }
             if sets != "" && reps != "" {
@@ -107,7 +107,7 @@ extension RepsWorkoutViewController: NextSetProtocol {
             numberOfSet += 1
             workoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
         } else {
-            presentSimpleAlert(title: "Error", message: "Finish your workout")
+            presentSimpleAlert(title: "Ошибка", message: "Вы закончили тренировку")
         }
     }
 }

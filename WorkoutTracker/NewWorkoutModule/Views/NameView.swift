@@ -9,7 +9,7 @@ import UIKit
 
 class NameView: UIView {
   
-    private let nameLabel = UILabel(text: "Name")
+    private let nameLabel = UILabel(text: "Имя")
     private let nameTextField = BrownTextField()
 
     override init(frame: CGRect) {

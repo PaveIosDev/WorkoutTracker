@@ -25,6 +25,7 @@
 		C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422B6A328F89437008C1E9F /* MainTabBarController.swift */; };
 		C43112D1290ED57F00C88763 /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43112D0290ED57F00C88763 /* RepsWorkoutViewController.swift */; };
 		C43112D3290EEC9000C88763 /* WorkoutParametrsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43112D2290EEC9000C88763 /* WorkoutParametrsView.swift */; };
+		C436BB662937B2EB007FCBFE /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436BB652937B2EB007FCBFE /* WeatherModel.swift */; };
 		C442E60D28F08EB100A788AD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */; };
 		C442E60E28F08EB100A788AD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */; };
 		C442E61228F0913600A788AD /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442E61128F0913600A788AD /* UIView + Extensions.swift */; };
@@ -51,6 +52,9 @@
 		C4C2CEB128FC753600FCD071 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */; };
 		C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */; };
 		C4D19D872905BB8D00F124BC /* SliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D19D862905BB8D00F124BC /* SliderType.swift */; };
+		C4E1D4662937B9DC009E6A72 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E1D4652937B9DC009E6A72 /* NetworkRequest.swift */; };
+		C4E1D4682937BF60009E6A72 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E1D4672937BF60009E6A72 /* NetworkDataFetch.swift */; };
+		C4E1D46A2937CFA1009E6A72 /* NetworkImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E1D4692937CFA1009E6A72 /* NetworkImageRequest.swift */; };
 		C4E4D417291AB9FB00ED85D8 /* DifferenceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4D416291AB9FB00ED85D8 /* DifferenceWorkout.swift */; };
 		C4E4D41C29214F0C00ED85D8 /* TimerWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4D41B29214F0C00ED85D8 /* TimerWorkoutViewController.swift */; };
 		C4E4D41E29214F4500ED85D8 /* TimerWorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4D41D29214F4500ED85D8 /* TimerWorkoutParametersView.swift */; };
@@ -79,6 +83,7 @@
 		C422B6A328F89437008C1E9F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C43112D0290ED57F00C88763 /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
 		C43112D2290EEC9000C88763 /* WorkoutParametrsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParametrsView.swift; sourceTree = "<group>"; };
+		C436BB652937B2EB007FCBFE /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C442E60B28F08EB100A788AD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		C442E60C28F08EB100A788AD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		C442E61128F0913600A788AD /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
@@ -105,6 +110,9 @@
 		C4C2CEB028FC753600FCD071 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		C4C2CEB228FC755100FCD071 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		C4D19D862905BB8D00F124BC /* SliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderType.swift; sourceTree = "<group>"; };
+		C4E1D4652937B9DC009E6A72 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		C4E1D4672937BF60009E6A72 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		C4E1D4692937CFA1009E6A72 /* NetworkImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageRequest.swift; sourceTree = "<group>"; };
 		C4E4D416291AB9FB00ED85D8 /* DifferenceWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceWorkout.swift; sourceTree = "<group>"; };
 		C4E4D41B29214F0C00ED85D8 /* TimerWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutViewController.swift; sourceTree = "<group>"; };
 		C4E4D41D29214F4500ED85D8 /* TimerWorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutParametersView.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 				C461F76F2927DC88006B41B8 /* SettingsModule */,
 				C442E60F28F090B300A788AD /* Extensions */,
 				C4ED1EBF290849C000BF16DD /* Service */,
+				C4E1D4642937B97B009E6A72 /* Network */,
 				C40DCF1F28ECB040009E4F3A /* Resources */,
 			);
 			path = WorkoutTracker;
@@ -352,6 +361,7 @@
 			children = (
 				C48821212905A8B7002DB0A8 /* WorkoutModel.swift */,
 				C40AEF5329311A2500DF5D4A /* UserModel.swift */,
+				C436BB652937B2EB007FCBFE /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,6 +431,16 @@
 				C4D19D862905BB8D00F124BC /* SliderType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C4E1D4642937B97B009E6A72 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4E1D4652937B9DC009E6A72 /* NetworkRequest.swift */,
+				C4E1D4672937BF60009E6A72 /* NetworkDataFetch.swift */,
+				C4E1D4692937CFA1009E6A72 /* NetworkImageRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		C4E4D415291AB9D500ED85D8 /* Models */ = {
@@ -569,11 +589,13 @@
 				C493A86B28FF1DA00080C8F6 /* CloseButton.swift in Sources */,
 				C419DFC62901BB13000E867B /* StatisticTableView.swift in Sources */,
 				C442E61728F09A5400A788AD /* UIColor + Extensions.swift in Sources */,
+				C4E1D46A2937CFA1009E6A72 /* NetworkImageRequest.swift in Sources */,
 				C4C2CEAF28FC522700FCD071 /* NewWorkoutViewController.swift in Sources */,
 				C43112D1290ED57F00C88763 /* RepsWorkoutViewController.swift in Sources */,
 				C4C2CEB328FC755100FCD071 /* RepsOrTimerView.swift in Sources */,
 				C4593FBA28F6FD3F00B46057 /* StatistictsTableViewCell.swift in Sources */,
 				C422B6A428F89437008C1E9F /* MainTabBarController.swift in Sources */,
+				C4E1D4682937BF60009E6A72 /* NetworkDataFetch.swift in Sources */,
 				C4E4D41E29214F4500ED85D8 /* TimerWorkoutParametersView.swift in Sources */,
 				C4ED1EC129084AE900BF16DD /* RealmManager.swift in Sources */,
 				C493A86628FF1CAD0080C8F6 /* UILabel + Extensions.swift in Sources */,
@@ -585,6 +607,8 @@
 				C461F7742927DD7E006B41B8 /* ProfileViewController.swift in Sources */,
 				C415E78A292A91FB009A6D97 /* ProfileCollectionViewCell.swift in Sources */,
 				C49B5656290AF194001A5172 /* UIViewController + Extentions.swift in Sources */,
+				C4E1D4662937B9DC009E6A72 /* NetworkRequest.swift in Sources */,
+				C436BB662937B2EB007FCBFE /* WeatherModel.swift in Sources */,
 				C40DCF0D28ECA85F009E4F3A /* SceneDelegate.swift in Sources */,
 				C488211F29058DD3002DB0A8 /* Int + Extensions.swift in Sources */,
 				C4E4D4202921536900ED85D8 /* CustomAlert.swift in Sources */,

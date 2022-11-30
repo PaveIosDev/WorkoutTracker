@@ -151,6 +151,8 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    //"https://api.openweathermap.org/data/2.5/weather?lat=59.933880&lon=30.337239&appid=05ca1612c7e0801c744dc31d14fbcaf7"
+    
     private func setUserModel() {
         
         guard let firstName = firstNameTextField.text,

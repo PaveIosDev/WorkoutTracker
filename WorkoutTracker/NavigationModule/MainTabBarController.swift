@@ -32,10 +32,9 @@ class MainTabBarController : UITabBarController {
         
         guard let items = tabBar.items else { return }
         
-        items[0].title = "Main"
-        items[1].title = "Statistic"
-        items[2].title = "Profile"
-        
+        items[0].title = "Главная"
+        items[1].title = "Статистика"
+        items[2].title = "Профиль"
         
         items[0].image = UIImage(named: "MainIcon")
         items[1].image = UIImage(named: "StatisticIcon")

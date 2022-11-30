@@ -9,7 +9,7 @@ import UIKit
 
 class RepsOrTimerView: UIView {
     
-    private let repsOrTimerLabel = UILabel(text: "Reps or timer")
+    private let repsOrTimerLabel = UILabel(text: "Повторения или таймер")
     
     private let backView: UIView = {
         let view = UIView()
@@ -19,11 +19,11 @@ class RepsOrTimerView: UIView {
         return view
     }()
     
-    private let setsView = SliderView(name: "Sets", minValue: 0, maxValue: 10, type: .sets)
-    private let repsView = SliderView(name: "Reps", minValue: 0, maxValue: 50, type: .reps)
-    private let timerView = SliderView(name: "Timer", minValue: 0, maxValue: 600, type: .timer)
+    private let setsView = SliderView(name: "Подходы", minValue: 0, maxValue: 10, type: .sets)
+    private let repsView = SliderView(name: "Повторения", minValue: 0, maxValue: 50, type: .reps)
+    private let timerView = SliderView(name: "Таймер", minValue: 0, maxValue: 600, type: .timer)
 
-    private let repeatOrTimerLabel = UILabel(text: "Choose repeat or timer")
+    private let repeatOrTimerLabel = UILabel(text: "Выбери повторения или таймер")
 
     private var stackView = UIStackView()
     

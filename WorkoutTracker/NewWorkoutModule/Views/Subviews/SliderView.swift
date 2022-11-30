@@ -15,7 +15,7 @@ class SliderView: UIView {
     
     weak var delegate: SliderViewProtocol?
     
-    private let nameLabel = UILabel(text: "Name",
+    private let nameLabel = UILabel(text: "Имя",
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
     

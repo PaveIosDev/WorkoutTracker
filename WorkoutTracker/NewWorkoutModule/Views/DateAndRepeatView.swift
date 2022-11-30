@@ -9,7 +9,7 @@ import UIKit
 
 class DateAndRepeatView: UIView {
     
-    private let dateAndRepeatLabel = UILabel(text: "Date and repeat")
+    private let dateAndRepeatLabel = UILabel(text: "Дата и повторения")
     
     private let backView: UIView = {
         let view = UIView()
@@ -19,7 +19,7 @@ class DateAndRepeatView: UIView {
         return view
     }()
     
-    private let dateLabel = UILabel(text: "Date",
+    private let dateLabel = UILabel(text: "Дата",
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
 
@@ -31,7 +31,7 @@ class DateAndRepeatView: UIView {
         return datePicker
     }()
     
-    private let repeatLabel = UILabel(text: "Repeat every 7 days",
+    private let repeatLabel = UILabel(text: "Повторять каждые 7 дней",
                                       font: .robotoMedium18(),
                                       textColor: .specialGray)
 

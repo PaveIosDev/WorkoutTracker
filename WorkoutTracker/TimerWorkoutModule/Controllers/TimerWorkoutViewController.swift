@@ -9,7 +9,7 @@ import UIKit
 
 class TimerWorkoutViewController: UIViewController {
 
-    private let newWorkoutLabel = UILabel(text: "START WORKOUT",
+    private let newWorkoutLabel = UILabel(text: "ТРЕНИРОВКА",
                                           font: .robotoMedium24(),
                                           textColor: .specialGray)
     
@@ -33,9 +33,9 @@ class TimerWorkoutViewController: UIViewController {
         return label
     }()
 
-    private lazy var finishButton = GreenButton(text: "FINISH")
+    private lazy var finishButton = GreenButton(text: "ЗАКОНЧИТЬ")
     private let timerWorkoutParametersView = TimerWorkoutParametersView()
-    private let detailsLabel = UILabel(text: "Details")
+    private let detailsLabel = UILabel(text: "Детали")
     
     private var workoutModel = WorkoutModel()
     private let customAlert = CustomAlert()
@@ -90,7 +90,7 @@ class TimerWorkoutViewController: UIViewController {
             dismiss(animated: true)
             RealmManager.shared.updateStatusWorkoutModel(model: workoutModel)
         } else {
-            presentAlertWithActions(title: "Warning", message: "You haven't finished your workout") {
+            presentAlertWithActions(title: "Внимание", message: "Вы не закончили свою тренировку") {
                 self.dismiss(animated: true)
             }
         }
@@ -110,7 +110,7 @@ class TimerWorkoutViewController: UIViewController {
         timerWorkoutParametersView.buttonIsEnable(false)
         
         if numberOfSet == workoutModel.workoutSets {
-            presentSimpleAlert(title: "Error", message: "Finish your workout")
+            presentSimpleAlert(title: "Ошибка", message: "Вы закончили тренировку")
         } else {
             basicAnimation()
             timer = Timer.scheduledTimer(timeInterval: 1,
@@ -154,11 +154,11 @@ extension TimerWorkoutViewController: NextSetTimerProtocol {
             numberOfSet += 1
             timerWorkoutParametersView.refreshLabels(model: workoutModel, numberOfSet: numberOfSet)
         } else {
-            presentSimpleAlert(title: "Error", message: "Finish your workout")
+            presentSimpleAlert(title: "Ошибка", message: "Вы закончили тренировку")
         }    }
     
     func editingTimerTapped() {
-        customAlert.presentCustomAlert(viewController: self, repsOrTimer: "Timer of set") { [weak self] sets, timerOfSet in
+        customAlert.presentCustomAlert(viewController: self, repsOrTimer: "Время упражнения") { [weak self] sets, timerOfSet in
             
             guard let self = self else { return }
             if sets != "" && timerOfSet != "" {

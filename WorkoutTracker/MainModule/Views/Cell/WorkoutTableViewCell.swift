@@ -107,7 +107,6 @@ class WorkoutTableViewCell: UITableViewCell {
         labelsStackView = UIStackView(arrangedSubviews: [workoutRepsLabel, workoutSetsLabel],
                                       axis: .horizontal,
                                       spacing: 10)
-        
         addSubview(labelsStackView)
         contentView.addSubview(startButton)
     }
@@ -140,7 +139,6 @@ class WorkoutTableViewCell: UITableViewCell {
             startButton.backgroundColor = .specialYellow
             startButton.isEnabled = true
         }
-        
         
         guard let imageData = model.workoutImage,
               let image = UIImage(data: imageData) else { return }

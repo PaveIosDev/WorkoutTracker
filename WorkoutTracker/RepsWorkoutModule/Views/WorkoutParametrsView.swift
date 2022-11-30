@@ -14,11 +14,11 @@ protocol NextSetProtocol: AnyObject {
 
 class WorkoutParametersView: UIView {
 
-    private let workoutNameLabel = UILabel(text: "Name",
+    private let workoutNameLabel = UILabel(text: "Имя",
                                           font: .robotoMedium24(),
                                           textColor: .specialGray)
 
-    private let setsLabel = UILabel(text: "Sets",
+    private let setsLabel = UILabel(text: "Подходы",
                                           font: .robotoMedium18(),
                                           textColor: .specialGray)
     
@@ -33,7 +33,7 @@ class WorkoutParametersView: UIView {
         return view
     }()
 
-    private let repsLabel = UILabel(text: "Reps",
+    private let repsLabel = UILabel(text: "Повторения",
                                           font: .robotoMedium18(),
                                           textColor: .specialGray)
     
@@ -51,7 +51,7 @@ class WorkoutParametersView: UIView {
     private lazy var  editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "pencil")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.setTitle("Editing", for: .normal)
+        button.setTitle("Редактировать", for: .normal)
         button.tintColor = .specialLightBrown
         button.titleLabel?.font = .robotoMedium16()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class WorkoutParametersView: UIView {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialYellow
         button.layer.cornerRadius = 10
-        button.setTitle("NEXT SET", for: .normal)
+        button.setTitle("ПРОДОЛЖИТЬ", for: .normal)
         button.tintColor = .specialGray
         button.titleLabel?.font = .robotoBold16()
         button.translatesAutoresizingMaskIntoConstraints = false

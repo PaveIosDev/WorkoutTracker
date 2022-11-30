@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Your name"
+        label.text = "Имя"
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.font = .robotoMedium24()
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
     
     private let workoutTodayLabel: UILabel = {
         let label = UILabel()
-        label.text = "Workout Today"
+        label.text = "Тренировки сегодня"
         label.textColor = .specialLightBrown
         label.font = .robotoMedium14()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -77,10 +77,6 @@ class MainViewController: UIViewController {
   
     private var workoutArray = [WorkoutModel]()
     
-//    override func viewWillLayoutSubviews() {
-//        
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectItem(date: Date())
@@ -92,6 +88,7 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        getWeather()
     }
     
     private func setupViews() {
@@ -152,6 +149,26 @@ class MainViewController: UIViewController {
                       return
                   }
             userPhotoImageView.image = image
+        }
+    }
+    
+    private func getWeather() {
+        NetworkDataFetch.shared.fetchWeather { [weak self] result, error in
+            guard let self = self else { return }
+            
+            if let model = result {
+                print(model)
+                self.weatherView.updateLabels(model: model)
+                NetworkImageRequest.shared.requestData(id: model.weather[0].icon) { [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success(let data):
+                        self.weatherView.updateImage(data: data)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
     }
 }
