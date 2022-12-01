@@ -28,7 +28,7 @@ extension UIViewController {
             completionHandler()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Выйти", style: .cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
@@ -41,17 +41,17 @@ extension UIViewController {
                                                 preferredStyle: .actionSheet)
         
         
-        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
+        let camera = UIAlertAction(title: "Камера", style: .default) { _ in
             let camera = UIImagePickerController.SourceType.camera
             completionHandler(camera)
         }
         
-        let photoLibrary = UIAlertAction(title: "photoLibrary", style: .default) { _ in
+        let photoLibrary = UIAlertAction(title: "Галерея", style: .default) { _ in
             let photoLibrary = UIImagePickerController.SourceType.photoLibrary
             completionHandler(photoLibrary)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Выйти", style: .cancel)
         
         alertController.addAction(camera)
         alertController.addAction(photoLibrary)

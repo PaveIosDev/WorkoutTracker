@@ -12,14 +12,14 @@ extension Int {
     func getTimeFromSeconds() -> String {
         
         if self / 60 == 0 {
-            return "\(self % 60) sec"
+            return "\(self % 60) с"
         }
         
         if self % 60 == 0 {
-        return "\(self / 60) min"
+        return "\(self / 60) мин"
         }
         
-        return "\(self / 60) min \(self % 60) sec"
+        return "\(self / 60) мин \(self % 60) с"
     }
     
     func convertSeconds() -> (Int, Int) {

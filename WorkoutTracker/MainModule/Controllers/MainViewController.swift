@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialYellow
         button.layer.cornerRadius = 10
-        button.setTitle("Add workout", for: .normal)
+        button.setTitle("Добавить", for: .normal)
         button.setImage(UIImage(named: "plus"), for: .normal)
         button.tintColor = .specialDarkGreen
         button.titleLabel?.font = .robotoMedium12()

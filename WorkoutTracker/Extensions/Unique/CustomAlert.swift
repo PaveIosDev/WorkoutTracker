@@ -62,7 +62,7 @@ class CustomAlert {
         sportsmanImageView.contentMode = .scaleAspectFit
         alertView.addSubview(sportsmanImageView)
         
-        let editingLabel = UILabel(text: "Editing", font: .robotoMedium22(), textColor: .specialBlack)
+        let editingLabel = UILabel(text: "Изменить", font: .robotoMedium22(), textColor: .specialBlack)
         editingLabel.frame = CGRect(x: 10,
                                     y: alertView.frame.height * 0.4 + 50,
                                     width: alertView.frame.width - 20,
@@ -71,7 +71,7 @@ class CustomAlert {
         editingLabel.translatesAutoresizingMaskIntoConstraints = true
         alertView.addSubview(editingLabel)
         
-        let setsLabel = UILabel(text: "Sets")
+        let setsLabel = UILabel(text: "Подходы")
         setsLabel.translatesAutoresizingMaskIntoConstraints = true
         setsLabel.frame = CGRect(x: 30,
                                  y: editingLabel.frame.maxY + 10,

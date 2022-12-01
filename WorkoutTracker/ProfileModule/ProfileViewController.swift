@@ -15,7 +15,7 @@ struct ResultWorkout {
 
 class ProfileViewController: UIViewController {
 
-    private let profileLabel = UILabel(text: "PROFILE", font: .robotoMedium24(), textColor: .specialGray)
+    private let profileLabel = UILabel(text: "ПРОФИЛЬ", font: .robotoMedium24(), textColor: .specialGray)
     
     private let userPhotoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -36,13 +36,13 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
-    private let userNameLabel = UILabel(text: "YOUR NAME", font: .robotoBold24(), textColor: .white)
-    private let userHeightLabel = UILabel(text: "Height: _", font: .robotoBold16(), textColor: .specialGray)
-    private let userWeightLabel = UILabel(text: "Weight: _", font: .robotoBold16(), textColor: .specialGray)
+    private let userNameLabel = UILabel(text: "Имя", font: .robotoBold24(), textColor: .white)
+    private let userHeightLabel = UILabel(text: "Рост: _", font: .robotoBold16(), textColor: .specialGray)
+    private let userWeightLabel = UILabel(text: "Вес: _", font: .robotoBold16(), textColor: .specialGray)
     
     private lazy var  editingButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Editing ", for: .normal)
+        button.setTitle("Изменить", for: .normal)
         button.titleLabel?.font = .robotoBold16()
         button.tintColor = .specialGreen
         button.semanticContentAttribute = .forceRightToLeft
@@ -193,9 +193,9 @@ class ProfileViewController: UIViewController {
         
         if userArray.count != 0 {
             userNameLabel.text = userArray[0].userFirstName + " " + userArray[0].userSecondName
-            userHeightLabel.text = "Height: \(userArray[0].userHeight)"
-            userWeightLabel.text = "Weight: \(userArray[0].userWeight)"
-            targetLabel.text = "TARGET: \(userArray[0].userTarget)"
+            userHeightLabel.text = "Рост: \(userArray[0].userHeight)"
+            userWeightLabel.text = "Вес: \(userArray[0].userWeight)"
+            targetLabel.text = "ЦЕЛЬ: \(userArray[0].userTarget)"
             workoutsTargetLabel.text = "\(userArray[0].userTarget)"
             
             guard let data = userArray[0].userImage,
@@ -274,7 +274,7 @@ extension ProfileViewController {
             editingButton.topAnchor.constraint(equalTo: userPhotoView.bottomAnchor, constant: 5),
             editingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             editingButton.heightAnchor.constraint(equalToConstant: 25),
-            editingButton.widthAnchor.constraint(equalToConstant: 75),
+            editingButton.widthAnchor.constraint(equalToConstant: 105),
 
             collectionView.topAnchor.constraint(equalTo: userParamStackView.bottomAnchor, constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

@@ -12,7 +12,7 @@ class StatisticsViewController: UIViewController {
 
     private let statisticsLabel: UILabel = {
         let label = UILabel()
-        label.text = "STATISTICS"
+        label.text = "СТАТИСТИКА"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class StatisticsViewController: UIViewController {
     
     private let exercisesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Exercises"
+        label.text = "Упражнения"
         label.font = .robotoMedium14()
         label.textColor = .specialLightBrown
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Week", "Month"])
+        let segmentedControl = UISegmentedControl(items: ["Неделя", "Месяц"])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.backgroundColor = .specialGreen
         segmentedControl.selectedSegmentTintColor = .specialYellow

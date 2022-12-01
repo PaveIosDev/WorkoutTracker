@@ -51,7 +51,7 @@ class WorkoutParametersView: UIView {
     private lazy var  editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "pencil")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.setTitle("Редактировать", for: .normal)
+        button.setTitle("Изменить", for: .normal)
         button.tintColor = .specialLightBrown
         button.titleLabel?.font = .robotoMedium16()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -153,7 +153,7 @@ class WorkoutParametersView: UIView {
             editingButton.topAnchor.constraint(equalTo: repsLineView.bottomAnchor, constant: 10),
             editingButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             editingButton.heightAnchor.constraint(equalToConstant: 20),
-            editingButton.widthAnchor.constraint(equalToConstant: 80),
+            editingButton.widthAnchor.constraint(equalToConstant: 105),
  
             nextSetsButton.topAnchor.constraint(equalTo: editingButton.bottomAnchor, constant: 10),
             nextSetsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),

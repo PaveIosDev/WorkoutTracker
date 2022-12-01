@@ -87,10 +87,10 @@ class NewWorkoutViewController: UIViewController {
             RealmManager.shared.saveWorkoutModel(workoutModel)
             createNotification()
             workoutModel = WorkoutModel()
-            presentSimpleAlert(title: "Success", message: nil)
+            presentSimpleAlert(title: "Успешно", message: nil)
             resetValues()
         } else {
-            presentSimpleAlert(title: "Error", message: "Enter all parametrs")
+            presentSimpleAlert(title: "Ошибка", message: "Введите все параметры")
         }
     }
     

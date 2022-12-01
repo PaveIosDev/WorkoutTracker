@@ -121,20 +121,20 @@ class WorkoutTableViewCell: UITableViewCell {
         workoutNameLabel.text = model.workoutName
         
         if model.workoutTimer == 0 {
-            workoutRepsLabel.text = "Reps: \(model.workoutReps)"
+            workoutRepsLabel.text = "Повторения: \(model.workoutReps)"
         } else {
-            workoutRepsLabel.text = "Timer: \(model.workoutTimer.getTimeFromSeconds())"
+            workoutRepsLabel.text = "Таймер: \(model.workoutTimer.getTimeFromSeconds())"
         }
         
-        workoutSetsLabel.text = "Sets: \(model.workoutSets)"
+        workoutSetsLabel.text = "Подходы: \(model.workoutSets)"
         
         if model.workoutStatus {
-            startButton.setTitle("COMPLETE", for: .normal)
+            startButton.setTitle("ВЫПОЛНЕНО", for: .normal)
             startButton.tintColor = .white
             startButton.backgroundColor = .specialGreen
             startButton.isEnabled = false
         } else {
-            startButton.setTitle("START", for: .normal)
+            startButton.setTitle("НАЧАТЬ ТРЕНИРОВКУ", for: .normal)
             startButton.tintColor = .specialDarkGreen
             startButton.backgroundColor = .specialYellow
             startButton.isEnabled = true

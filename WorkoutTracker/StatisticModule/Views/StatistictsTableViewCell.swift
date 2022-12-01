@@ -78,8 +78,8 @@ class StatistictsTableViewCell: UITableViewCell {
     
     public func cofigure(differenceWorkout: DifferenceWorkout) {
         nameLabel.text = differenceWorkout.name
-        beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
-        nowLabel.text = "Now: \(differenceWorkout.lastReps)"
+        beforeLabel.text = "Раньше: \(differenceWorkout.firstReps)"
+        nowLabel.text = "Сейчас: \(differenceWorkout.lastReps)"
         
         let difference = differenceWorkout.lastReps - differenceWorkout.firstReps
         differenceLabel.text = "\(difference)"

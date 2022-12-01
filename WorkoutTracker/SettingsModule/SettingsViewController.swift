@@ -10,7 +10,7 @@ import PhotosUI
 
 class SettingsViewController: UIViewController {
     
-    private let editingProfileLabel = UILabel(text: "EDITING PROFILE", font: .robotoMedium24(), textColor: .specialGray)
+    private let editingProfileLabel = UILabel(text: "ИЗМЕНИТЬ ПРОФИЛЬ", font: .robotoMedium24(), textColor: .specialGray)
     
     private lazy var  closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -40,22 +40,22 @@ class SettingsViewController: UIViewController {
         return view
     }()
     
-    private let firstNameLabel = UILabel(text: "   First name")
+    private let firstNameLabel = UILabel(text: "   Имя")
     private let firstNameTextField = BrownTextField()
     
-    private let secondNameLabel = UILabel(text: "   Second name")
+    private let secondNameLabel = UILabel(text: "   Фамилия")
     private let secondNameTextField = BrownTextField()
 
-    private let heightLabel = UILabel(text: "   Height")
+    private let heightLabel = UILabel(text: "   Рост")
     private let heightTextField = BrownTextField()
     
-    private let weightLabel = UILabel(text: "   Weight")
+    private let weightLabel = UILabel(text: "   Вес")
     private let weightTextField = BrownTextField()
     
-    private let targetLabel = UILabel(text: "   Target")
+    private let targetLabel = UILabel(text: "   Цель")
     private let targetTextField = BrownTextField()
 
-    private lazy var  saveButton = GreenButton(text: "SAVE")
+    private lazy var  saveButton = GreenButton(text: "СОХРАНИТЬ")
     
     private var firstNameStackView = UIStackView()
     private var secondNameStackView = UIStackView()
@@ -150,9 +150,7 @@ class SettingsViewController: UIViewController {
             self.chooseImagePicker(source: source)
         }
     }
-    
-    //"https://api.openweathermap.org/data/2.5/weather?lat=59.933880&lon=30.337239&appid=05ca1612c7e0801c744dc31d14fbcaf7"
-    
+        
     private func setUserModel() {
         
         guard let firstName = firstNameTextField.text,
@@ -203,8 +201,6 @@ class SettingsViewController: UIViewController {
             addPhotoImageView.contentMode = .scaleAspectFit
         }
     }
-    
-
 }
 
 //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -258,7 +254,6 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
 //        present(phPickerVC, animated: true)
 //    }
 //}
-
 
 //MARK: - SetConstraints
 
