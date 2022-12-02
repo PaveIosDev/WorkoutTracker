@@ -48,6 +48,7 @@ https://user-images.githubusercontent.com/98170830/205349949-76512e89-e0b0-494e-
 - при нажатии на ЗАКОНЧИТЬ треноровка становится ВЫПОЛНЕННОй на главном экране. Тренировка становится не активна.
 
 https://user-images.githubusercontent.com/98170830/205350836-770ee109-31a9-4b61-9a11-da7d9b12c3e5.mov
+
 https://user-images.githubusercontent.com/98170830/205350869-abc7ca80-35f1-46ce-9614-f4a439d116de.mov
 
 Экран статистика: 
